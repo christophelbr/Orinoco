@@ -1,0 +1,38 @@
+header {
+    text-align: center;
+}
+body {
+    background-color: #f3e9f1 ;
+}
+h1 {
+    font-family: 'Sedgwick Ave', cursive;
+}
+
+section, main {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    div {
+        width: 80%;
+        margin: 10px 10px;
+        border-style: double;
+        border-radius: 70px;
+        border-color: #945EF0;
+        padding-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        img { 
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            box-shadow: 5px 5px 5px #945EF0;
+          }
+        a {
+            text-decoration: none;    
+        }
+    }
+}
