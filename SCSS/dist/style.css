@@ -1,31 +1,24 @@
 @font-face {
-  font-family: 'Belligerent-Madness';
+  font-family: "Belligerent-Madness";
   src: url("../fonts/belligerent.ttf") format("woff");
   font-weight: normal;
   font-style: normal;
 }
-
 header {
   text-align: center;
 }
-
 header div {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
 }
-
 header img {
   width: 85px;
   height: 71px;
   margin: auto 10px auto 10px;
 }
-
 header h1 {
   font-size: 50px;
   margin: auto 10px auto 10px;
 }
-
 header nav {
   float: right;
   margin: 10px 10px 0 0;
@@ -36,18 +29,15 @@ body {
 }
 
 h1 {
-  font-family: 'Belligerent-Madness';
+  font-family: "Belligerent-Madness";
   font-size: 50px;
 }
 
 #listeOursons {
   text-align: center;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
-
 #listeOursons .conteneur {
   width: 80%;
   margin: 10px 10px;
@@ -58,7 +48,6 @@ h1 {
   margin-left: auto;
   margin-right: auto;
 }
-
 #listeOursons .conteneur img {
   width: 75%;
   border-radius: 100px;
@@ -66,156 +55,111 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
-  -webkit-box-shadow: 5px 5px 5px #945EF0;
-          box-shadow: 5px 5px 5px #945EF0;
-  -webkit-transition-duration: 2s;
-          transition-duration: 2s;
+  box-shadow: 5px 5px 5px #945EF0;
+  transition-duration: 2s;
 }
-
 #listeOursons .conteneur img:hover {
-  -webkit-transform: rotateZ(360deg);
-          transform: rotateZ(360deg);
+  transform: rotateZ(360deg);
 }
-
 #listeOursons .conteneur a {
   border-style: double;
   border-color: #945EF0;
   text-decoration: none;
   background: #E68A08;
   background-size: 100%;
-  background-image: -webkit-gradient(linear, left top, right top, from(#E68A08), to(#935DF3));
   background-image: linear-gradient(to right, #E68A08, #935DF3);
   border-radius: 1.5em;
-  -webkit-transition-duration: 2s;
-          transition-duration: 2s;
+  transition-duration: 2s;
   padding: 15px;
   font-weight: bold;
   letter-spacing: 0.05em;
   /* outline: none;
-    overflow: hidden; */
+  overflow: hidden; */
   /* cursor: pointer;
-    z-index: 99; */
+  z-index: 99; */
 }
-
 #listeOursons .conteneur a:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
   border-style: none;
 }
-
 #listeOursons .conteneur a:hover:before {
   opacity: 1;
 }
 
 @media only screen and (max-width: 990px) {
   #listeOursons {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media only screen and (max-width: 800px) {
   #listeOursons {
-    -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
-
 .MonOurson {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   border-style: double;
   border-radius: 70px;
   border-color: #945EF0;
 }
-
 .MonOurson img {
   width: 70%;
   border-radius: 70px;
   margin: 10px;
 }
-
 .MonOurson div {
   margin: auto 10px auto 10px;
 }
-
 .MonOurson .ESP {
   display: none;
 }
-
 .MonOurson a {
   border-style: double;
   border-color: #945EF0;
   text-decoration: none;
   background: #E68A08;
   background-size: 100%;
-  background-image: -webkit-gradient(linear, left top, right top, from(#E68A08), to(#935DF3));
   background-image: linear-gradient(to right, #E68A08, #935DF3);
   border-radius: 1.5em;
-  -webkit-transition-duration: 2s;
-          transition-duration: 2s;
+  transition-duration: 2s;
   padding: 15px;
   font-weight: bold;
   letter-spacing: 0.05em;
   /* outline: none;
-    overflow: hidden; */
+  overflow: hidden; */
   /* cursor: pointer;
-    z-index: 99; */
+  z-index: 99; */
 }
-
 .MonOurson a:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
   border-style: none;
 }
-
 .MonOurson a:hover:before {
   opacity: 1;
 }
-
 .MonOurson .infosProduit {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 .MonOurson p {
   margin-bottom: 20px;
 }
-
 .MonOurson select {
   margin: 0px 20px 20px 20px;
 }
-
 .MonOurson a {
   margin: 0px 20px 20px 0px;
 }
 
 @media only screen and (max-width: 900px) {
   .MonOurson {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 }
-/*# sourceMappingURL=style.css.map */
