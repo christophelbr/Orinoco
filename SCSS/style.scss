@@ -1,38 +1,176 @@
-header {
-    text-align: center;
-}
-body {
-    background-color: #f3e9f1 ;
-}
-h1 {
-    font-family: 'Sedgwick Ave', cursive;
+@font-face {
+    font-family: 'Belligerent-Madness';
+    src: url('../fonts/belligerent.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-section, main {
+@mixin boutton {
+    border-style: double !important;
+    border-color: #8e869c !important;
+    text-decoration: none !important;
+    background: #E68A08 !important;
+    background-size: 100% !important;
+    background-image: linear-gradient(to right, #E68A08, #935DF3) !important;
+    border-radius: 1.5em !important;
+    transition-duration: 2s !important;
+    padding: 15px !important;
+    font-weight: bold !important;
+    letter-spacing: 0.05em !important;
+
+    /* outline: none;
+    overflow: hidden; */
+    //position: absolute;
+    /* cursor: pointer;
+    z-index: 99; */
+    &:hover {
+        transform: scale(1.1);
+        border-style: none;
+    }
+
+    &:hover:before {
+        opacity: 1;
+    }
+}
+
+header {
+    text-align: center;
+
+    div {
+        display: inline-flex;
+    }
+
+    img {
+        width: 85px;
+        height: 71px;
+        margin: auto 10px auto 10px;
+    }
+
+    h1 {
+        font-size: 50px;
+        margin: auto 10px auto 10px;
+    }
+
+    nav {
+        float: right;
+        margin: 10px 10px 0 0;
+
+    }
+}
+
+body {
+    background-color: #f3e9f1;
+}
+
+h1 {
+    font-family: 'Belligerent-Madness';
+    font-size: 50px;
+}
+
+// Page d'accueil
+
+#listeOursons {
     text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    div {
+
+    .conteneur {
         width: 80%;
         margin: 10px 10px;
         border-style: double;
         border-radius: 70px;
-        border-color: #945EF0;
+        border-color: darken(#f3e9f1, 40);
         padding-bottom: 20px;
         margin-left: auto;
         margin-right: auto;
-        img { 
-            width: 200px;
-            height: 200px;
+
+        img {
+            width: 75%;
             border-radius: 100px;
             display: block;
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 20px;
             box-shadow: 5px 5px 5px #945EF0;
-          }
-        a {
-            text-decoration: none;    
+            transition-duration: 2s;
+
+            &:hover {
+                transform: rotateZ(360deg);
+            }
         }
+
+        a {
+            @include boutton;
+        }
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 990px) {
+    #listeOursons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #listeOursons {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+// Page Produit
+.MonOurson {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    border-style: double;
+    border-radius: 70px;
+    border-color: #945EF0;
+
+    img {
+        width: 70%;
+        border-radius: 70px;
+        margin: 10px;
+    }
+
+    div {
+        margin: auto 10px auto 10px;
+    }
+
+    .ESP {
+        display: none;
+    }
+
+    .infosProduit {
+        display: flex;
+        flex-direction: column;
+        /* a {
+                @include boutton;
+        } */
+    }
+    p {
+        margin-bottom: 20px;
+    }
+    select {
+        margin: 0px 20px 20px 20px;
+    }
+    a {
+        margin: 0px 20px 20px 0px;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+    .MonOurson {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
