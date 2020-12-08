@@ -5,6 +5,10 @@
   font-style: normal;
 }
 
+body {
+  background-color: #f3e9f1 !important;
+}
+
 header {
   text-align: center;
 }
@@ -160,36 +164,9 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.MonOurson .infosProduit button {
-  border-style: double !important;
-  border-color: #8e869c !important;
-  text-decoration: none !important;
-  background: #E68A08 !important;
-  background-size: 100% !important;
-  background-image: -webkit-gradient(linear, left top, right top, from(#E68A08), to(#935DF3)) !important;
-  background-image: linear-gradient(to right, #E68A08, #935DF3) !important;
-  border-radius: 1.5em !important;
-  -webkit-transition-duration: 2s !important;
-          transition-duration: 2s !important;
-  padding: 15px !important;
-  font-weight: bold !important;
-  letter-spacing: 0.05em !important;
-  /* outline: none;
-    overflow: hidden; */
-  /* cursor: pointer;
-    z-index: 99; */
-}
-
-.MonOurson .infosProduit button:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  border-style: none;
-}
-
-.MonOurson .infosProduit button:hover:before {
-  opacity: 1;
+  /* a {
+                @include boutton;
+        } */
 }
 
 .MonOurson p {
