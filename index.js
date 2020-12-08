@@ -17,36 +17,6 @@ request.onload = function() {
 //    showOursons(Oursons); // créera une carte d'identité pour chaque Ourson et l'ajoutera dans la <section>
    }
   
-<<<<<<< HEAD
-=======
-/* function myHeader() { 
-    let divHeader = document.createElement('div');
-    let logo = document.createElement('img');
-    let myH1 = document.createElement('h1'); 
-    let myNav  = document.createElement('nav');
-    let panier = document.createElement('a');
-    let imgPanier = document.createElement('i');
-    let compteur = document.createElement('span');
-    logo.src = 'img/logo.png';
-    myH1.textContent = 'Orinoco'; 
-    panier.textContent = 'Panier';
-    header.appendChild(divHeader);
-    divHeader.appendChild(logo);
-    divHeader.appendChild(myH1); 
-    header.appendChild(myNav);
-    myNav.appendChild(imgPanier);
-    imgPanier.classList.add('fas');
-    imgPanier.classList.add('fa-shopping-cart');
-    imgPanier.classList.add('fa-2x');
-    myNav.appendChild(panier);
-    myNav.appendChild(compteur);
-    panier.href = 'panier.html';
-    let myPara = document.createElement('p');
-    myPara.textContent = ' vente d\'oursons en peluche ' ;
-    header.appendChild(myPara);
-    } */
-
->>>>>>> refs/remotes/origin/master
     // let listeOursons = document.getElementById("listeOursons");
     ajaxGet("http://localhost:3000/api/teddies").then(function (reponse) {
         let oursons = JSON.parse(reponse);
