@@ -8,29 +8,29 @@
 	<link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/71985bd6ad.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="scss/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
 </head>
 <body>
 	<header>
 		<div>
-			<img src="http://localhost/PROJET5/ORINOCO/img/logo.png">
+			<img src="img/logo.png">
 			<h1>Orinoco</h1>
 		</div>
 		<nav>
 			<i class="fas fa-shopping-cart fa-2x" aria-hidden="true"></i>
-			<a href="http://localhost/PROJET5/ORINOCO/panier.html">Panier</a>
-			<span id="indexPanier"></span>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Panier (<span class="total-count"></span>)</button>
+			<button class="clear-cart btn btn-danger">Vider panier</button>		
 		</nav>
 		<p> vente d'oursons en peluche </p>
 	</header>
 
-	<section id="listeOursons">
-		
-	</section>
 
 	<footer>
 		
 	</footer>
 	<script type="text/javascript" src="ajax.js"></script>
+	<script type="text/javascript" src="cart.js"></script>
 	<script type="text/javascript" src="ourson.js"></script>
     <script type="text/javascript" src="index.js"></script>
 </body>

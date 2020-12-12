@@ -40,7 +40,7 @@ body {
 }
 
 h1 {
-  font-family: 'Belligerent-Madness';
+  font-family: 'Belligerent-Madness' !important;
   font-size: 50px;
 }
 

@@ -9,20 +9,16 @@
 	<script src="https://kit.fontawesome.com/71985bd6ad.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="scss/style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>	<script src="https://kit.fontawesome.com/71985bd6ad.js" crossorigin="anonymous"></script>
-
 </head>
 <body>
 	<header>
 		<div>
-			<img src="http://localhost/PROJET5/ORINOCO/img/logo.png">
+			<img src="http://localhost:8888/PROJET5/ORINOCO/img/logo.png">
 			<h1>Orinoco</h1>
 		</div>
 		<nav>
 			<i class="fas fa-shopping-cart fa-2x" aria-hidden="true"></i>
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Panier (<span class="total-count"></span>)</button>
+			<a href="panier.html" class="btn btn-primary" data-toggle="modal">Panier (<span class="total-count"></span>)</a>
 			<button class="clear-cart btn btn-danger">Vider panier</button>		
 		</nav>
 		<p> vente d'oursons en peluche </p>
@@ -63,6 +59,7 @@
 		
 	</footer>
 	<script type="text/javascript" src="ajax.js"></script>
+	<script type="text/javascript" src="cart.js"></script>
 	<script type="text/javascript" src="ourson.js"></script>
     <script type="text/javascript" src="index.js"></script>
 </body>

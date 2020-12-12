@@ -4,6 +4,10 @@
   font-weight: normal;
   font-style: normal;
 }
+body {
+  background-color: #f3e9f1 !important;
+}
+
 header {
   text-align: center;
 }
@@ -29,7 +33,7 @@ body {
 }
 
 h1 {
-  font-family: "Belligerent-Madness";
+  font-family: "Belligerent-Madness" !important;
   font-size: 50px;
 }
 
@@ -62,17 +66,17 @@ h1 {
   transform: rotateZ(360deg);
 }
 #listeOursons .conteneur a {
-  border-style: double;
-  border-color: #945EF0;
-  text-decoration: none;
-  background: #E68A08;
-  background-size: 100%;
-  background-image: linear-gradient(to right, #E68A08, #935DF3);
-  border-radius: 1.5em;
-  transition-duration: 2s;
-  padding: 15px;
-  font-weight: bold;
-  letter-spacing: 0.05em;
+  border-style: double !important;
+  border-color: #8e869c !important;
+  text-decoration: none !important;
+  background: #E68A08 !important;
+  background-size: 100% !important;
+  background-image: linear-gradient(to right, #E68A08, #935DF3) !important;
+  border-radius: 1.5em !important;
+  transition-duration: 2s !important;
+  padding: 15px !important;
+  font-weight: bold !important;
+  letter-spacing: 0.05em !important;
   /* outline: none;
   overflow: hidden; */
   /* cursor: pointer;
@@ -118,33 +122,12 @@ h1 {
 .MonOurson .ESP {
   display: none;
 }
-.MonOurson a {
-  border-style: double;
-  border-color: #945EF0;
-  text-decoration: none;
-  background: #E68A08;
-  background-size: 100%;
-  background-image: linear-gradient(to right, #E68A08, #935DF3);
-  border-radius: 1.5em;
-  transition-duration: 2s;
-  padding: 15px;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-  /* outline: none;
-  overflow: hidden; */
-  /* cursor: pointer;
-  z-index: 99; */
-}
-.MonOurson a:hover {
-  transform: scale(1.1);
-  border-style: none;
-}
-.MonOurson a:hover:before {
-  opacity: 1;
-}
 .MonOurson .infosProduit {
   display: flex;
   flex-direction: column;
+  /* a {
+          @include boutton;
+  } */
 }
 .MonOurson p {
   margin-bottom: 20px;
