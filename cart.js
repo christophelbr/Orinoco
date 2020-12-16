@@ -19,24 +19,35 @@ class ShoppingCart {
 
         let itemCart = new ItemCart(ourson.name, ourson.price, 1);
         console.log(itemCart);
-
-        
-// créer un objet itemCart et le pousser ds le tableau this.cart, vérifier ci l'objet existe, si oui on l'ajoute au niveau de la qtté, méthode qui vérifie ts les noms ?
+        this.cart.push(itemCart);
+        console.log(this.cart);
+        localStorage.setItem("shoppingCart", JSON.stringify(this.cart));
+        console.log("Le produit a été ajouté au panier");
+        alert("Cet article a été ajouté dans votre panier");
+        this.saveCart();
+        this.loadCart();
+        // créer un objet itemCart et le pousser ds le tableau this.cart, vérifier ci l'objet existe, si oui on l'ajoute au niveau de la qtté, méthode qui vérifie ts les noms ?
     }
+    displayCart () {
+        console.log(this.cart);
+    }
+    
+    //Ajout de l'article au panier de l'utilisateur
 }
+
 
 class ItemCart {
     constructor(name, price, quantity) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
-    }    
+    }
 
     // une méthode ajouter ou supp des qqté
 }
 //let item = new ItemCart([0,1,2]);
-    /* this.cart.push(item);
-    saveCart(); */
+/* this.cart.push(item);
+saveCart(); */
 
 /*
 let shoppingCart = (function () {

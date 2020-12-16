@@ -77,6 +77,7 @@ class Ourson {
 
     const header = document.querySelector('header');
     const section = document.querySelector('section');
+    const span = document.querySelector('span');
     section.appendChild(this.div);
     this.div.classList.add('conteneur');
     this.div2.classList.add('infosProduit');
@@ -94,6 +95,7 @@ class Ourson {
       this.div2.appendChild(this.panierElt);
     }
     this.div2.appendChild(this.urlElt);
+    document.getElementById('total-count').innerHTML = this.cart.cart.length;
 
   }
 }
