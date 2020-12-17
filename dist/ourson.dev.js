@@ -24,6 +24,7 @@ function () {
     this.conteneur = conteneur;
     this.produit = produit;
     this.afficherOurson();
+    this.cart = new ShoppingCart();
   }
 
   _createClass(Ourson, [{
@@ -117,6 +118,7 @@ function () {
       // const listeOursons = document.getElementById('listeOursons');
       var header = document.querySelector('header');
       var section = document.querySelector('section');
+      var span = document.querySelector('span');
       section.appendChild(this.div);
       this.div.classList.add('conteneur');
       this.div2.classList.add('infosProduit');
@@ -129,7 +131,6 @@ function () {
       this.div2.appendChild(this.priceElt);
 
       if (this.produit) {
-        this.cart = new ShoppingCart();
         header.appendChild(this.nameElt);
         this.div.classList.add('MonOurson');
         this.div2.appendChild(this.descriptionElt);

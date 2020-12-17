@@ -5,6 +5,7 @@ class ShoppingCart {
         if (localStorage.getItem("shoppingCart") != null) {
             this.loadCart();
         } else { this.cart = [] }
+        this.countCart();
     }
 
     loadCart() {
@@ -14,24 +15,34 @@ class ShoppingCart {
     saveCart() {
         localStorage.setItem('shoppingCart', JSON.stringify(this.cart));
     }
+    countCart() {
+        document.getElementById('total-count').innerHTML = this.cart.length;
+
+    }
 
     addToCart(ourson) {
-
         let itemCart = new ItemCart(ourson.name, ourson.price, 1);
+        
+        if (this.cart.find(e => ourson.name === ourson.name)) {
+            console.log('il y est déjà' );
+        } else {
+            console.log('il n \'y est pas' );
+        };
         console.log(itemCart);
         this.cart.push(itemCart);
-        console.log(this.cart);
         localStorage.setItem("shoppingCart", JSON.stringify(this.cart));
         console.log("Le produit a été ajouté au panier");
-        alert("Cet article a été ajouté dans votre panier");
-        this.saveCart();
-        this.loadCart();
+        //alert("Cet article a été ajouté dans votre panier");
+        //location.reload();
+        console.log(this.cart[1].quantity);
+        this.countCart();
+
+
+
+        //this.saveCart();
+        //this.loadCart();
         // créer un objet itemCart et le pousser ds le tableau this.cart, vérifier ci l'objet existe, si oui on l'ajoute au niveau de la qtté, méthode qui vérifie ts les noms ?
     }
-    displayCart () {
-        console.log(this.cart);
-    }
-    
     //Ajout de l'article au panier de l'utilisateur
 }
 

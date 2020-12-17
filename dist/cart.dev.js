@@ -18,6 +18,8 @@ function () {
     } else {
       this.cart = [];
     }
+
+    this.countCart();
   }
 
   _createClass(ShoppingCart, [{
@@ -31,11 +33,35 @@ function () {
       localStorage.setItem('shoppingCart', JSON.stringify(this.cart));
     }
   }, {
+    key: "countCart",
+    value: function countCart() {
+      document.getElementById('total-count').innerHTML = this.cart.length;
+    }
+  }, {
     key: "addToCart",
     value: function addToCart(ourson) {
-      var itemCart = new ItemCart(ourson.name, ourson.price, 1);
-      console.log(itemCart); // créer un objet itemCart et le pousser ds le tableau this.cart, vérifier ci l'objet existe, si oui on l'ajoute au niveau de la qtté, méthode qui vérifie ts les noms ?
-    }
+      var itemCart;
+
+      if (this.cart.find(function (e) {
+        return e.name === ourson.name;
+      })) {
+        new ItemCart(ourson.name, ourson.price, 1);
+      } else {
+        new ItemCart(ourson.name, ourson.price, 1);
+      }
+
+      console.log(itemCart);
+      this.cart.push(itemCart);
+      localStorage.setItem("shoppingCart", JSON.stringify(this.cart));
+      console.log("Le produit a été ajouté au panier");
+      alert("Cet article a été ajouté dans votre panier"); //location.reload();
+
+      console.log(this.cart);
+      this.countCart(); //this.saveCart();
+      //this.loadCart();
+      // créer un objet itemCart et le pousser ds le tableau this.cart, vérifier ci l'objet existe, si oui on l'ajoute au niveau de la qtté, méthode qui vérifie ts les noms ?
+    } //Ajout de l'article au panier de l'utilisateur
+
   }]);
 
   return ShoppingCart;

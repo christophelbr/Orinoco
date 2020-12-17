@@ -11,6 +11,8 @@ class Ourson {
     this.conteneur = conteneur;
     this.produit = produit;
     this.afficherOurson();
+    this.cart = new ShoppingCart;
+
   }
 
 
@@ -87,7 +89,6 @@ class Ourson {
     this.div.appendChild(this.div2);
     this.div2.appendChild(this.priceElt);
     if (this.produit) {
-      this.cart = new ShoppingCart
       header.appendChild(this.nameElt);
       this.div.classList.add('MonOurson');
       this.div2.appendChild(this.descriptionElt);
@@ -95,8 +96,7 @@ class Ourson {
       this.div2.appendChild(this.panierElt);
     }
     this.div2.appendChild(this.urlElt);
-    document.getElementById('total-count').innerHTML = this.cart.cart.length;
-
   }
+  
 }
 
