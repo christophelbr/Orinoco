@@ -4,8 +4,11 @@ class ShoppingCart {
     constructor() {
         if (localStorage.getItem("shoppingCart") != null) {
             this.loadCart();
-        } else { this.cart = [] }
+        } else {
+            this.cart = []
+        }
         this.countCart();
+        //this.clearCart();
     }
 
     loadCart() {
@@ -15,32 +18,43 @@ class ShoppingCart {
     saveCart() {
         localStorage.setItem('shoppingCart', JSON.stringify(this.cart));
     }
+
     countCart() {
         document.getElementById('total-count').innerHTML = this.cart.length;
-
     }
+
+    /*      clearCart() {
+            let btn = document.getElementById('clear');
+            btn.addEventListener('click', () => {
+                localStorage.clear();
+                this.countCart();
+                console.log(this.cart);
+
+            }) 
+
+        } */
 
     addToCart(ourson) {
         let itemCart = new ItemCart(ourson.name, ourson.price, 1);
-        
-        if (this.cart.find(e => ourson.name === ourson.name)) {
-            console.log('il y est déjà' );
-        } else {
-            console.log('il n \'y est pas' );
+        if (this.cart.find(e => e.name === ourson.name)) {
+            itemCart.quantity++;
+            if (itemCart.quantity < itemCart.quantity++) {
+                this.cart.splice(itemCart);
+            }
+                console.log(itemCart.quantity);
+            }
+
+         else {
+            console.log('il n \'y est pas');
         };
         console.log(itemCart);
         this.cart.push(itemCart);
         localStorage.setItem("shoppingCart", JSON.stringify(this.cart));
         console.log("Le produit a été ajouté au panier");
         //alert("Cet article a été ajouté dans votre panier");
-        //location.reload();
-        console.log(this.cart[1].quantity);
+        console.log(this.cart);
         this.countCart();
 
-
-
-        //this.saveCart();
-        //this.loadCart();
         // créer un objet itemCart et le pousser ds le tableau this.cart, vérifier ci l'objet existe, si oui on l'ajoute au niveau de la qtté, méthode qui vérifie ts les noms ?
     }
     //Ajout de l'article au panier de l'utilisateur

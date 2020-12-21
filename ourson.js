@@ -12,7 +12,6 @@ class Ourson {
     this.produit = produit;
     this.afficherOurson();
     this.cart = new ShoppingCart;
-
   }
 
 
