@@ -27,7 +27,6 @@ class Ourson {
     this.generateMonPanier();
     this.generateUrl();
     this.addElementHtml();
-
   }
 
   generateColorsSelect() {

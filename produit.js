@@ -8,8 +8,17 @@ function getUrlVars() {
 let id = getUrlVars().produit;
 const section = document.querySelector('section');
 
+
+fetch("http://localhost:3000/api/teddies/" + id)
+    .then(response => response.json())
+    .then(response => {
+
+            const ourson = new Ourson(response, section, true)
+        })    
+    .catch(error => alert("Erreur : " + error));
+
 // let monOurson = document.getElementById('MonOurson');
-ajaxGet("http://localhost:3000/api/teddies/" + id).then(
+/* ajaxGet("http://localhost:3000/api/teddies/" + id).then(
     function (reponse) {
         let oursons = JSON.parse(reponse);
 
@@ -19,4 +28,4 @@ ajaxGet("http://localhost:3000/api/teddies/" + id).then(
     function (error) {
         console.log(error)
     }
-);
+); */

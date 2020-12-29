@@ -4,11 +4,10 @@ class ShoppingCart {
     constructor() {
         if (localStorage.getItem("shoppingCart") != null) {
             this.loadCart();
-        } else {
-            this.cart = []
-        }
+        } else { this.cart = [] }
         this.countCart();
-        //this.clearCart();
+        this.clearCart();
+
     }
 
     loadCart() {
@@ -18,87 +17,70 @@ class ShoppingCart {
     saveCart() {
         localStorage.setItem('shoppingCart', JSON.stringify(this.cart));
     }
-
     countCart() {
-        document.getElementById('total-count').innerHTML = this.cart.length;
+        let count = 0;
+        for (const item of this.cart) {
+            count += item.quantity;
+        }
+        document.getElementById('total-count').innerHTML = count;
     }
 
-    /*      clearCart() {
-            let btn = document.getElementById('clear');
-            btn.addEventListener('click', () => {
-                localStorage.clear();
-                this.countCart();
-                console.log(this.cart);
+    clearCart() {
+        let btn = document.getElementById('clear');
+        btn.addEventListener('click', () => {
+            this.cart = [];
+            localStorage.clear();
+            this.countCart();
+            console.log(this.cart);
 
-            }) 
-
-        } */
-
+        })
+    }
     addToCart(ourson) {
-        let itemCart = new ItemCart(ourson.name, ourson.price, 1);
-        if (this.cart.find(e => e.name === ourson.name)) {
-            itemCart.quantity++;
-            if (itemCart.quantity < itemCart.quantity++) {
-                this.cart.splice(itemCart);
-            }
-                console.log(itemCart.quantity);
-            }
-
-         else {
+        let itemCart = new ItemCart(ourson.name, ourson.price, ourson._id, 1);
+        const itemFound = this.cart.find(e => e.productId === ourson._id);
+        if (itemFound) {
+            itemFound.quantity++;
+            console.log('il y est déjà');
+        } else {
+            this.cart.push(itemCart);
             console.log('il n \'y est pas');
         };
-        console.log(itemCart);
-        this.cart.push(itemCart);
         localStorage.setItem("shoppingCart", JSON.stringify(this.cart));
         console.log("Le produit a été ajouté au panier");
         //alert("Cet article a été ajouté dans votre panier");
         console.log(this.cart);
         this.countCart();
-
-        // créer un objet itemCart et le pousser ds le tableau this.cart, vérifier ci l'objet existe, si oui on l'ajoute au niveau de la qtté, méthode qui vérifie ts les noms ?
     }
-    //Ajout de l'article au panier de l'utilisateur
+    displayCart() {
+        let cartArray = this.cart;
+        let listePanier = document.getElementById('listePanier');
+        for (let item of cartArray) {
+            this.tr = document.createElement('tr');
+            this.tdName = document.createElement('td');
+            this.tdId = document.createElement('td');
+            this.tdPrice = document.createElement('td');
+            this.tdQuantity = document.createElement('td');
+            listePanier.appendChild(this.tr);
+            this.tr.appendChild(this.tdName);
+            this.tdName.textContent = item.name;
+            this.tr.appendChild(this.tdId);
+            this.tdId.textContent = item.productId;
+            this.tr.appendChild(this.tdPrice);
+            this.tdPrice.textContent = item.price;
+            this.tr.appendChild(this.tdQuantity);
+            this.tdQuantity.textContent = item.quantity;
+            console.log(item.name, item.productId, item.price, item.quantity);
+        }
+    }
+
 }
 
-
-class ItemCart {
-    constructor(name, price, quantity) {
-        this.name = name;
-        this.price = price;
-        this.quantity = quantity;
-    }
-
-    // une méthode ajouter ou supp des qqté
-}
 //let item = new ItemCart([0,1,2]);
 /* this.cart.push(item);
 saveCart(); */
 
 /*
-let shoppingCart = (function () {
-    // =============================
-    // Méthodes et proproétés
-    // =============================
-    cart = [];
 
-    // Constructor
-    function Item(name, price, count) {
-        this.name = name;
-        this.price = price;
-        this.count = count;
-        console.log(this.name);
-
-
-    }
-    // Save cart
-    function saveCart() {
-        localStorage.setItem('shoppingCart', JSON.stringify(cart));
-    }
-
-    // Load cart
-    function loadCart() {
-        cart = JSON.parse(localStorage.getItem('shoppingCart'));
-    }
 
 }
 
@@ -109,18 +91,7 @@ let shoppingCart = (function () {
     let obj = {};
 
 // Add to cart
-obj.addItemToCart = function (name, price, count) {
-    for (let item in cart) {
-        if (cart[item].name === name) {
-            cart[item].count++;
-            saveCart();
-            return;
-        }
-    }
-    let item = new Item(name, price, count);
-    cart.push(item);
-    saveCart();
-}
+
 // Set count from item
 obj.setCountForItem = function (name, count) {
     for (let i in cart) {
@@ -234,14 +205,14 @@ function displayCart() {
     let output = "";
     for (let i in cartArray) {
         output += "<tr>"
-            + "<td>" + cartArray[i].name + "</td>"
-            + "<td>(" + cartArray[i].price + ")</td>"
-            + "<td><div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-name=" + cartArray[i].name + ">-</button>"
-            + "<input type='number' class='item-count form-control' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
-            + "<button class='plus-item btn btn-primary input-group-addon' data-name=" + cartArray[i].name + ">+</button></div></td>"
-            + "<td><button class='delete-item btn btn-danger' data-name=" + cartArray[i].name + ">X</button></td>"
+            + "<td>" + item.name + "</td>"
+            + "<td>(" + item.price + ")</td>"
+            + "<td><div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-name=" + item.name + ">-</button>"
+            + "<input type='number' class='item-count form-control' data-name='" + item.name + "' value='" + item.count + "'>"
+            + "<button class='plus-item btn btn-primary input-group-addon' data-name=" + item.name + ">+</button></div></td>"
+            + "<td><button class='delete-item btn btn-danger' data-name=" + item.name + ">X</button></td>"
             + " = "
-            + "<td>" + cartArray[i].total + "</td>"
+            + "<td>" + item.total + "</td>"
             + "</tr>";
     }
     $('.show-cart').html(output);
