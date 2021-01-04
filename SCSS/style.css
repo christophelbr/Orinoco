@@ -35,10 +35,6 @@ header nav {
   margin: 10px 10px 0 0;
 }
 
-body {
-  background-color: #f3e9f1;
-}
-
 h1 {
   font-family: 'Belligerent-Madness' !important;
   font-size: 50px;
@@ -194,5 +190,14 @@ h1 {
         -ms-flex-align: center;
             align-items: center;
   }
+}
+
+#listePanier {
+  text-align: -webkit-center;
+}
+
+#listePanier tr td {
+  border: 1px solid black;
+  padding: 20px !important;
 }
 /*# sourceMappingURL=style.css.map */

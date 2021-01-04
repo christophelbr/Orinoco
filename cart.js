@@ -4,9 +4,13 @@ class ShoppingCart {
     constructor() {
         if (localStorage.getItem("shoppingCart") != null) {
             this.loadCart();
-        } else { this.cart = [] }
+        } else {
+            this.cart = []
+        }
         this.countCart();
-        this.clearCart();
+        // this.clearCart();
+        /*         this.countCartLess();
+         */ //this.countCartMore(); 
 
     }
 
@@ -24,6 +28,30 @@ class ShoppingCart {
         }
         document.getElementById('total-count').innerHTML = count;
     }
+    /* countCartLess() {
+           for (let item of this.cart) {
+               if (item.name === item.name) {
+                   item.quantity--;
+                   if (item.quantity === 0) {
+                       this.cart.splice(item, 1);
+                   }
+               }
+           }  */
+    /* 
+            let countLess = itemLess.quantity;
+
+                for (let itemLess of this.cart) {
+                    countLess -= itemLess.quantity;
+                }
+            document.getElementsByClassName('less').innerHTML = countLess; */
+    // } 
+    /*     countCartMore() {
+            let countMore = item.quantity;
+            for (const item of this.cart) {
+                countMore += item.quantity;
+            }
+            document.getElementsByClassName('more').innerHTML = countMore;
+        }  */
 
     clearCart() {
         let btn = document.getElementById('clear');
@@ -60,6 +88,10 @@ class ShoppingCart {
             this.tdId = document.createElement('td');
             this.tdPrice = document.createElement('td');
             this.tdQuantity = document.createElement('td');
+            this.less = document.createElement('button');
+            this.less.textContent = '-'
+            this.more = document.createElement('button');
+            this.more.textContent = '+'
             listePanier.appendChild(this.tr);
             this.tr.appendChild(this.tdName);
             this.tdName.textContent = item.name;
@@ -68,9 +100,30 @@ class ShoppingCart {
             this.tr.appendChild(this.tdPrice);
             this.tdPrice.textContent = item.price;
             this.tr.appendChild(this.tdQuantity);
+            this.tdQuantity.setAttribute('id', 'qantity'+ item.name);
             this.tdQuantity.textContent = item.quantity;
+            this.tr.appendChild(this.less);
+            this.less.setAttribute('id', '-' + item.name);
+            this.less.addEventListener('click', () => {
+                item.quantity--;
+                localStorage.setItem("shoppingCart", JSON.stringify(this.cart));
+                if (item.quantity === 0) {
+                    this.cart.splice(item, 1);}
+                this.countCart();
+                this.tdQuantity.textContent = item.quantity;
+            })
+            this.tr.appendChild(this.more);
+            this.more.classList.add('more');
+            this.more.addEventListener('click', () => {
+                item.quantity++;
+                localStorage.setItem("shoppingCart", JSON.stringify(this.cart));
+                this.countCart();
+                this.tdQuantity.textContent = item.quantity;
+            })
+
             console.log(item.name, item.productId, item.price, item.quantity);
         }
+
     }
 
 }
