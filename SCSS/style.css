@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Belligerent-Madness';
+  font-family: "Belligerent-Madness";
   src: url("../fonts/belligerent.ttf") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -36,7 +36,7 @@ header nav {
 }
 
 h1 {
-  font-family: 'Belligerent-Madness' !important;
+  font-family: "Belligerent-Madness" !important;
   font-size: 50px;
 }
 
@@ -66,8 +66,8 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
-  -webkit-box-shadow: 5px 5px 5px #945EF0;
-          box-shadow: 5px 5px 5px #945EF0;
+  -webkit-box-shadow: 5px 5px 5px #945ef0;
+          box-shadow: 5px 5px 5px #945ef0;
   -webkit-transition-duration: 2s;
           transition-duration: 2s;
 }
@@ -81,10 +81,10 @@ h1 {
   border-style: double !important;
   border-color: #8e869c !important;
   text-decoration: none !important;
-  background: #E68A08 !important;
+  background: #e68a08 !important;
   background-size: 100% !important;
-  background-image: -webkit-gradient(linear, left top, right top, from(#E68A08), to(#935DF3)) !important;
-  background-image: linear-gradient(to right, #E68A08, #935DF3) !important;
+  background-image: -webkit-gradient(linear, left top, right top, from(#e68a08), to(#935df3)) !important;
+  background-image: linear-gradient(to right, #e68a08, #935df3) !important;
   border-radius: 1.5em !important;
   -webkit-transition-duration: 2s !important;
           transition-duration: 2s !important;
@@ -135,7 +135,7 @@ h1 {
           flex-direction: row;
   border-style: double;
   border-radius: 70px;
-  border-color: #945EF0;
+  border-color: #945ef0;
 }
 
 .MonOurson img {
@@ -192,12 +192,65 @@ h1 {
   }
 }
 
-#listePanier {
+#listePanier,
+#count {
+  margin-left: auto;
+  margin-right: auto;
   text-align: -webkit-center;
 }
 
-#listePanier tr td {
+#listePanier tr td,
+#count tr td {
   border: 1px solid black;
   padding: 20px !important;
+}
+
+form {
+  margin: 0 auto;
+  width: 400px;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+}
+
+form label {
+  display: inline-block;
+  width: 90px;
+  text-align: left;
+}
+
+form li {
+  list-style: none;
+}
+
+form input,
+form textarea {
+  font: 1em sans-serif;
+  width: 300px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #999;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #000;
+}
+
+form textarea {
+  vertical-align: top;
+  height: 5em;
+}
+
+form .button {
+  padding-left: 90px;
+}
+
+form button {
+  margin-left: 0.5em;
+}
+
+form div + div {
+  margin-top: 1em;
 }
 /*# sourceMappingURL=style.css.map */

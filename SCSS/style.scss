@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Belligerent-Madness';
-    src: url('../fonts/belligerent.ttf') format('woff');
+    font-family: "Belligerent-Madness";
+    src: url("../fonts/belligerent.ttf") format("woff");
     font-weight: normal;
     font-style: normal;
 }
@@ -9,9 +9,9 @@
     border-style: double !important;
     border-color: #8e869c !important;
     text-decoration: none !important;
-    background: #E68A08 !important;
+    background: #e68a08 !important;
     background-size: 100% !important;
-    background-image: linear-gradient(to right, #E68A08, #935DF3) !important;
+    background-image: linear-gradient(to right, #e68a08, #935df3) !important;
     border-radius: 1.5em !important;
     transition-duration: 2s !important;
     padding: 15px !important;
@@ -58,12 +58,11 @@ header {
     nav {
         float: right;
         margin: 10px 10px 0 0;
-
     }
 }
 
 h1 {
-    font-family: 'Belligerent-Madness' !important;
+    font-family: "Belligerent-Madness" !important;
     font-size: 50px;
 }
 
@@ -91,7 +90,7 @@ h1 {
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 20px;
-            box-shadow: 5px 5px 5px #945EF0;
+            box-shadow: 5px 5px 5px #945ef0;
             transition-duration: 2s;
 
             &:hover {
@@ -104,11 +103,6 @@ h1 {
         }
     }
 }
-
-
-
-
-
 
 @media only screen and (max-width: 990px) {
     #listeOursons {
@@ -132,7 +126,7 @@ h1 {
     flex-direction: row;
     border-style: double;
     border-radius: 70px;
-    border-color: #945EF0;
+    border-color: #945ef0;
 
     img {
         width: 70%;
@@ -167,7 +161,6 @@ h1 {
     a {
         margin: 0px 20px 20px 0px;
     }
-
 }
 
 @media only screen and (max-width: 900px) {
@@ -179,7 +172,10 @@ h1 {
 }
 
 // Page Panier
-#listePanier {
+#listePanier,
+#count {
+    margin-left: auto;
+    margin-right: auto;
     text-align: -webkit-center;
 
     tr {
@@ -188,4 +184,53 @@ h1 {
             padding: 20px !important;
         }
     }
+}
+form {
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+
+    label {
+        display: inline-block;
+        width: 90px;
+        text-align: left;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    input,
+    textarea {
+        font: 1em sans-serif;
+        width: 300px;
+        box-sizing: border-box;
+
+        border: 1px solid #999;
+    }
+
+    input:focus,
+    textarea:focus {
+        border-color: #000;
+    }
+
+    textarea {
+        vertical-align: top;
+
+        height: 5em;
+    }
+
+    .button {
+        padding-left: 90px;
+    }
+
+    button {
+        margin-left: 0.5em;
+    }
+}
+
+form div + div {
+    margin-top: 1em;
 }
