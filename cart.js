@@ -61,51 +61,74 @@ class ShoppingCart {
         console.log(this.cart);
         this.countCart();
     }
-
     displayCart() {
         let cartArray = this.cart;
-        let listePanier = document.querySelector('#listePanier tbody');
         for (let item of cartArray) {
-            const tr = document.createElement('tr');
-            const tdName = document.createElement('td');
-            const tdPrice = document.createElement('td');
-            const tdQuantity = document.createElement('td');
-            const less = document.createElement('button');
-            less.textContent = '-';
-            const more = document.createElement('button');
-            more.textContent = '+'
-            listePanier.appendChild(tr);
-            tr.appendChild(tdName);
-            tdName.textContent = item.name;
-            tr.appendChild(tdPrice);
-            tdPrice.textContent = item.price * item.quantity;
-            tr.appendChild(tdQuantity);
-            tdQuantity.setAttribute('id', 'qantity' + item.name);
-            tdQuantity.textContent = item.quantity;
-            tr.appendChild(less);
-            less.setAttribute('id', '-' + item.name);
-            less.addEventListener('click', () => {
-                item.quantity--;
-                localStorage.setItem("shoppingCart", JSON.stringify(this.cart));
-                if (item.quantity === 0) {
-                    this.cart.splice(item, 1);
-                }
-                this.countCart();
-                tdQuantity.textContent = item.quantity;
-                tdPrice.textContent = item.price * item.quantity;
-            })
-            tr.appendChild(more);
-            more.classList.add('more');
-            more.addEventListener('click', () => {
-                item.quantity++;
-                localStorage.setItem("shoppingCart", JSON.stringify(this.cart));
-                this.countCart();
-                tdQuantity.textContent = item.quantity;
-                tdPrice.textContent = item.price * item.quantity;
-            })
+            this.createTrInCartTable(item);
             console.log(item.name, item.price, item.quantity);
         }
+        this.submitCart();
+    }
 
+    createTrInCartTable(item) {
+        const listePanier = document.querySelector('#listePanier tbody');
+        const tr = document.createElement('tr');
+
+        const tdPrice = document.createElement('td');
+        const less = document.createElement('button');
+        less.textContent = '-';
+        const more = document.createElement('button');
+        more.textContent = '+'
+        listePanier.appendChild(tr);
+        const tdName = this.createTdInCartTable(item.name);
+        tr.appendChild(tdName);
+        tr.appendChild(tdPrice);
+        tdPrice.textContent = item.price * item.quantity;
+        
+// Creation quantité
+        const tdQuantity = this.createTdInCartTable(item.quantity);
+        tr.appendChild(tdQuantity);
+        tdQuantity.setAttribute('id', 'qantity' + item.name);
+        
+        tr.appendChild(less);
+        less.setAttribute('id', '-' + item.name);
+        tr.appendChild(more);
+        more.classList.add('more');
+        this.lessPlusButton(more, item, tdQuantity, tdPrice);
+        this.lessPlusButton(less, item, tdQuantity, tdPrice);
+    }
+    createTdInCartTable(content) {
+        const tdElt = document.createElement('td');
+        tdElt.textContent = content;
+        return tdElt;
+    }
+
+    lessPlusButton(btnElt, item, tdQuantity, tdPrice) {
+        btnElt.addEventListener('click', () => {
+            if (btnElt.classList.contains('more')) {
+                item.quantity++;
+            } else {
+                item.quantity--;
+                if (item.quantity <= 0) {
+                    item.quantity = 0;
+                    this.cart.splice(item, 1);
+                }
+            }
+            localStorage.setItem("shoppingCart", JSON.stringify(this.cart));
+            this.countCart();
+            tdQuantity.textContent = item.quantity;
+            tdPrice.textContent = item.price * item.quantity;
+        })
+    }
+
+
+
+
+    submitCart() {
+        document.querySelector('form button').addEventListener('click', (event) => {
+            event.preventDefault();
+            console.log('envoi form');
+        })
     }
 
 }
