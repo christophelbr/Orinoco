@@ -40,14 +40,14 @@
 			</tr>
 		</thead>
 		<tbody>
-			
+
 		</tbody>
 
 	</table>
 	<section id="count">
 		<p>Total : <span id="totalPrice"></span></p>
 	</section>
-	<form action="/submit-cart" method="post">
+	<form id="myForm" action="/submit-cart" method="post">
 		<ul>
 			<li>
 				<label for="name">Nom:</label>
@@ -67,11 +67,11 @@
 			</li>
 			<li>
 				<label for="city">Ville</label>
-				<input type="email" id="city" name="user_city" />
+				<input type="text" id="city" name="user_city" />
 			</li>
 			<li>
 				<label for="phone">Téléphone</label>
-				<input type="email" id="phone" name="user_phone" />
+				<input type="number" id="phone" name="user_phone" />
 			</li>
 			<li class="button">
 				<button type="submit">Passer commande</button>
@@ -84,11 +84,6 @@
 
 	<script type="text/javascript" src="cart.js"></script>
 	<script type="text/javascript" src="cartPage.js"></script>
-	<!-- <script type="text/javascript" src="index.js"></script> -->
-
-
-
-
 </body>
 
 </html>

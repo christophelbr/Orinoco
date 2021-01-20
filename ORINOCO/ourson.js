@@ -1,4 +1,3 @@
-
 class Ourson {
   constructor(ourson, conteneur, produit = false) {
     this.colors = ourson.colors;
@@ -13,7 +12,6 @@ class Ourson {
     this.afficherOurson();
     this.cart = new ShoppingCart;
   }
-
 
   afficherOurson() {
     this.div = document.createElement('div');
@@ -73,16 +71,13 @@ class Ourson {
   }
 
   addElementHtml() {
-    // const listeOursons = document.getElementById('listeOursons');
-
     const header = document.querySelector('header');
     const section = document.querySelector('section');
     const span = document.querySelector('span');
     section.appendChild(this.div);
     this.div.classList.add('conteneur');
     this.div2.classList.add('infosProduit');
-/*         this.panierElt.id('ajoutPanier');
- */        this.div.appendChild(this.nameElt);
+    this.div.appendChild(this.nameElt);
     this.div.appendChild(this.imgElt);
     this.div.appendChild(this.div2);
     this.div2.appendChild(this.priceElt);
@@ -95,6 +90,4 @@ class Ourson {
     }
     this.div2.appendChild(this.urlElt);
   }
-  
 }
-
