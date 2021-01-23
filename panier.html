@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="FR">
+
+<head>
+	<title>Orinoco</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Orinoco vente de d'ours en peluche">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/71985bd6ad.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="scss/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+		integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+
+<body>
+	<header>
+		<div>
+			<a href="http://localhost:8888/PROJET5/ORINOCO/index.html"><img src="img/logo.png"></a>
+			<h1>Orinoco</h1>
+		</div>
+		<nav>
+			<i class="fas fa-shopping-cart fa-2x" aria-hidden="true"></i>
+			<a href="panier.html" class="btn btn-primary" data-toggle="modal">Panier (<span
+					id="total-count"></span>)</a>
+			<button id="clear" class="clear-cart btn btn-danger">Vider panier</button>
+		</nav>
+		<p>Vente d'oursons en peluche </p>
+	</header>
+
+
+	</div>
+
+	<table id="listePanier">
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Prix</th>
+				<th>Quantité</th>
+			</tr>
+		</thead>
+		<tbody>
+
+		</tbody>
+
+	</table>
+	<section id="count">
+		<p>Total : <span id="totalPrice"></span></p>
+	</section>
+	<form id="myForm" action="/submit-cart" method="post">
+		<ul>
+			<li>
+				<label for="name">Nom:</label>
+				<input type="text" id="name" name="user_name" />
+			</li>
+			<li>
+				<label for="mail">E-mail:</label>
+				<input type="email" id="mail" name="user_mail" />
+			</li>
+			<li>
+				<label for="adress">Adresse</label>
+				<input type="text" id="adress" name="user_adress" />
+			</li>
+			<li>
+				<label for="cp">Code postal</label>
+				<input type="number" id="cp" name="user_cp" />
+			</li>
+			<li>
+				<label for="city">Ville</label>
+				<input type="text" id="city" name="user_city" />
+			</li>
+			<li>
+				<label for="phone">Téléphone</label>
+				<input type="tel" id="phone" name="user_phone" />
+			</li>
+			<li class="button">
+				<button type="submit">Passer commande</button>
+			</li>
+		</ul>
+	</form>
+	<footer>
+
+	</footer>
+
+	<script type="text/javascript" src="cart.js"></script>
+	<script type="text/javascript" src="cartPage.js"></script>
+</body>
+
+</html>
