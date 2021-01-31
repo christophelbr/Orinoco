@@ -47,31 +47,27 @@
 	<section id="count">
 		<p>Total : <span id="totalPrice"></span></p>
 	</section>
-	<form id="myForm" action="/submit-cart" method="post">
+	<form id="my-form" method="post" action="/order">
 		<ul>
 			<li>
 				<label for="name">Nom:</label>
-				<input type="text" id="name" name="user_name" />
+				<input type="text" id="firstname" name="user_name" required/>
 			</li>
 			<li>
-				<label for="mail">E-mail:</label>
-				<input type="email" id="mail" name="user_mail" />
+				<label for="name">prenom:</label>
+				<input type="text" id="lastname" name="user_lastname" required/>
 			</li>
 			<li>
 				<label for="adress">Adresse</label>
-				<input type="text" id="adress" name="user_adress" />
-			</li>
-			<li>
-				<label for="cp">Code postal</label>
-				<input type="number" id="cp" name="user_cp" />
+				<input type="text" id="adress" name="user_adress" required/>
 			</li>
 			<li>
 				<label for="city">Ville</label>
-				<input type="text" id="city" name="user_city" />
+				<input type="text" id="city" name="user_city" required/>
 			</li>
 			<li>
-				<label for="phone">Téléphone</label>
-				<input type="tel" id="phone" name="user_phone" />
+				<label for="mail">E-mail:</label>
+				<input type="email" id="mail" name="user_mail" required/>
 			</li>
 			<li class="button">
 				<button type="submit">Passer commande</button>

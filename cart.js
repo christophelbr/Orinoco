@@ -121,25 +121,76 @@ class ShoppingCart {
         })
     }
 
+    //Validation formulaire
+    formValid() {
+        let firstName = document.getElementById('firstname');
+        let lastName = document.getElementById('lastname');
+        let adress = document.getElementById('adress');
+        let city = document.getElementById('city');
+        let mail = document.getElementById('mail');
+
+        if (firstName.value == "") {
+            alert("Mettez votre nom.");
+            firstName.focus();
+            return false;
+        }
+        if (lastName.value == "") {
+            alert("Mettez votre prénom.");
+            lastName.focus();
+            return false;
+        }
+        if (adress.value == "") {
+            alert("Mettez une adresse email valide.");
+            adress.focus();
+            return false;
+        }
+        if (city.value == "") {
+            alert("saisissez votre ville.");
+            city.focus();
+            return false;
+        }
+        if (mail.value.indexOf("@", 0) < 0) {
+            alert("Mettez une adresse email valide.");
+            email.focus();
+            return false;
+        }
+        if (mail.value.indexOf(".", 0) < 0) {
+            alert("Mettez une adresse email valide.");
+            mail.focus();
+            return false;
+        }
+        return true;
+    }
+
     // Envoi formulaire
     submitCart() {
         document.querySelector('form button').addEventListener('click', (event) => {
             event.preventDefault();
             console.log('envoi form');
-            console.log(FormData);
+            this.formValid();
+            /*             const products = this.cart.map(ourson => ourson.productId);
+             */
+            const products = [];
+            for (let ourson of this.cart){
+                for (let i=0; i<ourson.quantity; i++) {
+                    products.push(ourson.productId)
+                }
+            }
+            
+            console.log(products);
 
             const form = {
                 "contact": {
-                    "firstName": "toto",
-                    "lastName": "toto",
-                    "address": "toto",
-                    "city": "toto",
-                    "email": "toto@gmail.com"
+                    "firstName": document.getElementById('firstname').value,
+                    "lastName": document.getElementById('lastname').value,
+                    "address": document.getElementById('adress').value,
+                    "city": document.getElementById('city').value,
+                    "email": document.getElementById('mail').value,
                 },
-                "products": [
-                    "5be9c8541c9d440000665243"
-                ]
+                products
             };
+
+            console.log(form);
             (async () => {
                 const envoiForm = fetch("http://localhost:3000/api/teddies/order", {
                     method: "POST",
@@ -151,7 +202,9 @@ class ShoppingCart {
                 }).then((response) => {
                     return response.json();
                 }).then((data) => {
-                    console.log(JSON.stringify(data));
+                    // faire la redirection vers la page order  
+                    // stocker les information utilisateur créer un objet client dans local storage
+                    console.log(data);
                 });
             })();
         })
