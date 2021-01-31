@@ -70,6 +70,7 @@ class ShoppingCart {
     }
 
     // Création tableau sur page panier
+    
     createTrInCartTable(item) {
         const listePanier = document.querySelector('#listePanier tbody');
         const tr = document.createElement('tr');
@@ -205,6 +206,9 @@ class ShoppingCart {
                     // faire la redirection vers la page order  
                     // stocker les information utilisateur créer un objet client dans local storage
                     console.log(data);
+                    /* let recap = JSON.stringify(data);
+                    console.log(recap); */
+                    localStorage.setItem('order', JSON.stringify(form));
                 });
             })();
         })
