@@ -16,7 +16,7 @@
 <body>
 	<header>
 		<div>
-			<a href="http://localhost:8888/PROJET5/ORINOCO/index.html"><img src="img/logo.png"></a>
+			<a href="index.html"><img src="img/logo.png"></a>
 			<h1>Orinoco</h1>
 		</div>
 		<nav>
@@ -27,13 +27,52 @@
 		</nav>
 		<p>Vente d'oursons en peluche </p>
 	</header>
-	
+
+	<h2>Récapitulatif de la commande</h2>
+	<div class="order">
+		<ul>
+			<li id="cmd">Numéro de commande : </li>
+			<li id="state">Statut de la commande : validée</li>
+		</ul>
+		<ul>
+			<li>ADRESSE DE LIVRAISON</li>
+			<li id="adress"></li>
+			<li id="city"></li>
+		</ul>
+		<ul>
+			<li>INFORMATIONS CLIENT</li>
+			<li id="name"></li>
+			<li id="mail"></li>
+		</ul>
+	</div>
+	<h3><span id="nb-articles"></span>ARTICLE(S)</h3>
+	<div  class="order">
+		<ul id="product-list">
+			<li>Produits</li>
+			<li id="products"></li>
+		</ul>
+		<!-- <ul>
+			<li>ADRESSE DE LIVRAISON</li>
+			<li id="adress"></li>
+			<li id="city"></li>
+		</ul>
+		<ul>
+			<li>INFORMATIONS CLIENT</li>
+			<li id="name"></li>
+			<li id="mail"></li>
+		</ul> -->
+	</div>
+
+
 	<footer>
 
 	</footer>
 
-	<script type="text/javascript" src="cart.js"></script>
-<!-- 	<script type="text/javascript" src="cartPage.js"></script>
- --></body>
+	<script type="text/javascript" src="js/cart.js"></script>
+	<script type="text/javascript" src="js/cartPage.js"></script>
+	<script type="text/javascript" src="js/order.js"></script>
+
+
+</body>
 
 </html>
