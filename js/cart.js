@@ -211,14 +211,13 @@ class ShoppingCart {
                         // faire la redirection vers la page order  
                         // stocker les information utilisateur créer un objet client dans local storage
                         console.log(data);
+                        this.clearCart();
+                        localStorage.setItem('order', JSON.stringify(data));
+                        document.location.href="order.html"
 
-                        localStorage.setItem('order', JSON.stringify(form));
                         
                     });
                 })();
-               /*  if (this.formValid()) {
-                document.location.href="order.html"
-                } */
             })
         }
     }
