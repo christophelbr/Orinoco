@@ -29,8 +29,9 @@ class ShoppingCart {
         }
         document.getElementById('total-count').innerHTML = count;
         if (document.URL.indexOf("panier.html") >= 0) {
-            document.getElementById('totalPrice').innerHTML = totalPrice;
+            document.getElementById('totalPrice').innerHTML = totalPrice + " €";
         }
+        localStorage.setItem('totalPrice', JSON.stringify(totalPrice));
     }
 
     // Bouton vider panier
@@ -84,7 +85,7 @@ class ShoppingCart {
             const tdName = this.createTdInCartTable(item.name);
             tr.appendChild(tdName);
             tr.appendChild(tdPrice);
-            tdPrice.textContent = item.price * item.quantity;
+            tdPrice.textContent = item.price * item.quantity + " €";
             // Creation quantité
             const tdQuantity = this.createTdInCartTable(item.quantity);
             tr.appendChild(tdQuantity);
@@ -208,15 +209,13 @@ class ShoppingCart {
                     }).then((response) => {
                         return response.json();
                     }).then((data) => {
-                        // faire la redirection vers la page order  
-                        // stocker les information utilisateur créer un objet client dans local storage
                         console.log(data);
                         this.clearCart();
                         localStorage.setItem('order', JSON.stringify(data));
-                        document.location.href="order.html"
-
-                        
-                    });
+                        console.log(this.cart);
+             
+                             document.location.href="order.html"       
+                   });
                 })();
             })
         }

@@ -5,24 +5,19 @@
     font-style: normal;
 }
 
-@mixin boutton {
+@mixin bouton {/* 
     border-style: double !important;
-    border-color: #8e869c !important;
+    border-color: #8e869c !important; */
     text-decoration: none !important;
     background: #e68a08 !important;
     background-size: 100% !important;
     background-image: linear-gradient(to right, #e68a08, #935df3) !important;
     border-radius: 1.5em !important;
-    transition-duration: 2s !important;
+    transition-duration: 0.5s !important;
     padding: 15px !important;
     font-weight: bold !important;
     letter-spacing: 0.05em !important;
 
-    /* outline: none;
-    overflow: hidden; */
-    //position: absolute;
-    /* cursor: pointer;
-    z-index: 99; */
     &:hover {
         transform: scale(1.1);
         border-style: none;
@@ -99,7 +94,7 @@ h1 {
         }
 
         a {
-            @include boutton;
+            @include bouton;
         }
     }
 }
@@ -146,7 +141,7 @@ h1 {
         display: flex;
         flex-direction: column;
         /* a {
-                @include boutton;
+                @include bouton;
         } */
     }
 
@@ -159,6 +154,7 @@ h1 {
     }
 
     a {
+        @include bouton;
         margin: 0px 20px 20px 0px;
     }
 }
@@ -185,6 +181,7 @@ h1 {
         }
     }
 }
+
 form {
     margin: 0 auto;
     width: 400px;
@@ -231,12 +228,13 @@ form {
     }
 }
 
-form div + div {
+form div+div {
     margin-top: 1em;
 }
 
 // Page order
-h2, h3 {
+h2,
+h3 {
     text-align: center;
 }
 
@@ -254,3 +252,14 @@ h2, h3 {
     }
 }
 
+@media only screen and (max-width: 900px) {
+    .order {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        ul {
+            border-radius: 10px;
+        }
+    }
+}

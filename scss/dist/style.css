@@ -28,10 +28,6 @@ header nav {
   margin: 10px 10px 0 0;
 }
 
-body {
-  background-color: #f3e9f1;
-}
-
 h1 {
   font-family: "Belligerent-Madness" !important;
   font-size: 50px;
@@ -59,28 +55,25 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
-  box-shadow: 5px 5px 5px #945EF0;
+  box-shadow: 5px 5px 5px #945ef0;
   transition-duration: 2s;
 }
 #listeOursons .conteneur img:hover {
   transform: rotateZ(360deg);
 }
 #listeOursons .conteneur a {
+  /* 
   border-style: double !important;
-  border-color: #8e869c !important;
+  border-color: #8e869c !important; */
   text-decoration: none !important;
-  background: #E68A08 !important;
+  background: #e68a08 !important;
   background-size: 100% !important;
-  background-image: linear-gradient(to right, #E68A08, #935DF3) !important;
+  background-image: linear-gradient(to right, #e68a08, #935df3) !important;
   border-radius: 1.5em !important;
-  transition-duration: 2s !important;
+  transition-duration: 0.5s !important;
   padding: 15px !important;
   font-weight: bold !important;
   letter-spacing: 0.05em !important;
-  /* outline: none;
-  overflow: hidden; */
-  /* cursor: pointer;
-  z-index: 99; */
 }
 #listeOursons .conteneur a:hover {
   transform: scale(1.1);
@@ -109,7 +102,7 @@ h1 {
   flex-direction: row;
   border-style: double;
   border-radius: 70px;
-  border-color: #945EF0;
+  border-color: #945ef0;
 }
 .MonOurson img {
   width: 70%;
@@ -126,7 +119,7 @@ h1 {
   display: flex;
   flex-direction: column;
   /* a {
-          @include boutton;
+          @include bouton;
   } */
 }
 .MonOurson p {
@@ -136,7 +129,26 @@ h1 {
   margin: 0px 20px 20px 20px;
 }
 .MonOurson a {
+  /* 
+  border-style: double !important;
+  border-color: #8e869c !important; */
+  text-decoration: none !important;
+  background: #e68a08 !important;
+  background-size: 100% !important;
+  background-image: linear-gradient(to right, #e68a08, #935df3) !important;
+  border-radius: 1.5em !important;
+  transition-duration: 0.5s !important;
+  padding: 15px !important;
+  font-weight: bold !important;
+  letter-spacing: 0.05em !important;
   margin: 0px 20px 20px 0px;
+}
+.MonOurson a:hover {
+  transform: scale(1.1);
+  border-style: none;
+}
+.MonOurson a:hover:before {
+  opacity: 1;
 }
 
 @media only screen and (max-width: 900px) {
@@ -144,5 +156,86 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+}
+#listePanier,
+#count {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: -webkit-center;
+}
+#listePanier tr td,
+#count tr td {
+  border: 1px solid black;
+  padding: 20px !important;
+}
+
+form {
+  margin: 0 auto;
+  width: 400px;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+}
+form label {
+  display: inline-block;
+  width: 90px;
+  text-align: left;
+}
+form li {
+  list-style: none;
+}
+form input,
+form textarea {
+  font: 1em sans-serif;
+  width: 300px;
+  box-sizing: border-box;
+  border: 1px solid #999;
+}
+form input:focus,
+form textarea:focus {
+  border-color: #000;
+}
+form textarea {
+  vertical-align: top;
+  height: 5em;
+}
+form .button {
+  padding-left: 90px;
+}
+form button {
+  margin-left: 0.5em;
+}
+
+form div + div {
+  margin-top: 1em;
+}
+
+h2,
+h3 {
+  text-align: center;
+}
+
+.order {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+}
+.order ul {
+  padding: 20px;
+  list-style-type: none;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+}
+
+@media only screen and (max-width: 900px) {
+  .order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .order ul {
+    border-radius: 10px;
   }
 }
