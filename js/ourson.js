@@ -39,6 +39,7 @@ class Ourson {
 
   generateThumbnail() {
     this.imgElt = document.createElement("img");
+    this.imgElt.setAttribute('alt', 'ourson en peluche');
     this.imgElt.src = this.imageUrl;
   }
 
