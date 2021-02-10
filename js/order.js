@@ -1,6 +1,7 @@
 let order = JSON.parse(localStorage.getItem('order'));
 let bill = JSON.parse(localStorage.getItem('totalPrice'));
 console.log(order);
+document.getElementById('thanks').textContent = order.contact.thanks;
 document.getElementById('cmd').textContent = order.orderId;
 document.getElementById('adress').textContent = order.contact.adress;
 document.getElementById('city').textContent = order.contact.city;
@@ -14,3 +15,4 @@ for (let product of order.products) {
     productList.appendChild(liproduct);
     liproduct.textContent = product.name + " " + product.price + " €";
 }
+localStorage.clear();

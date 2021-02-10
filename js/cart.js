@@ -57,7 +57,6 @@ class ShoppingCart {
         };
         this.saveCart();
         console.log("Le produit a été ajouté au panier");
-        //alert("Cet article a été ajouté dans votre panier!");
         this.countCart();
     }
 
@@ -116,7 +115,8 @@ class ShoppingCart {
                 item.quantity--;
                 if (item.quantity <= 0) {
                     item.quantity = 0;
-                    this.cart.splice(item, 1);
+                    this.cart.splice(item);
+
                 }
             }
             this.saveCart();
@@ -163,9 +163,14 @@ class ShoppingCart {
             alert("Mettez une adresse email valide.");
             mail.focus();
             return false;
-        }
-        return true;
+        } /* else {
+            document.location.href = "order.html"
+
+        } */
+
     }
+
+
 
     // Envoi formulaire
     submitCart() {
@@ -175,8 +180,6 @@ class ShoppingCart {
                 event.preventDefault();
                 console.log('envoi form');
                 this.formValid();
-                /*             const products = this.cart.map(ourson => ourson.productId);
-                 */
                 const products = [];
                 for (let ourson of this.cart) {
                     for (let i = 0; i < ourson.quantity; i++) {
@@ -193,6 +196,7 @@ class ShoppingCart {
                         "adress": document.getElementById('adress').value,
                         "city": document.getElementById('city').value,
                         "email": document.getElementById('mail').value,
+                        "thanks": document.getElementById('lastname').value + ', toute l\'équipe d\'Orinococo vous remercie pour votre commande!',
                     },
                     products
                 };
@@ -213,11 +217,12 @@ class ShoppingCart {
                         this.clearCart();
                         localStorage.setItem('order', JSON.stringify(data));
                         console.log(this.cart);
-             
-                             document.location.href="order.html"       
-                   });
+                        document.location.href = "order.html"
+                    });
                 })();
             })
         }
     }
+
+
 }
