@@ -49,7 +49,7 @@ class Ourson {
 
   generatePrice() {
     this.priceElt = document.createElement('p');
-    this.priceElt.textContent = 'Prix : ' + this.price;
+    this.priceElt.textContent = 'Prix : ' + this.price + ' €';
   }
 
   generateMonPanier() {

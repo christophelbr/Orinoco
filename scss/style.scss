@@ -5,9 +5,7 @@
     font-style: normal;
 }
 
-@mixin bouton {/* 
-    border-style: double !important;
-    border-color: #8e869c !important; */
+@mixin bouton {
     text-decoration: none !important;
     background: #e68a08 !important;
     background-size: 100% !important;
@@ -30,10 +28,12 @@
 
 body {
     background-color: #f3e9f1 !important;
+    font-family: "Belligerent-Madness" !important;
 }
 
 header {
     text-align: center;
+    padding-top: 20px;
 
     div {
         display: inline-flex;
@@ -54,11 +54,32 @@ header {
         float: right;
         margin: 10px 10px 0 0;
     }
+    p {
+        font-size: 30px;
+        padding: 15px;
+        margin-bottom: 10px;
+        margin: 10px 64px;
+        margin-bottom: 10px;
+        border-style: double;
+        border-radius: 70px;
+        border-color: #ab659d;
+        margin-top: 1rem;
+    }
 }
 
-h1 {
-    font-family: "Belligerent-Madness" !important;
-    font-size: 50px;
+footer {
+    border-top: double #ab659d;
+    margin: 20px 0 20px 0;
+    text-align: center;
+    ul {
+        margin: 20px;
+        padding: 20px;
+        list-style: none;
+    }
+    i {
+        color: cornflowerblue;
+        padding-bottom: 20px;
+    }
 }
 
 // Page d'accueil
@@ -111,6 +132,17 @@ h1 {
     }
 }
 
+@media only screen and (max-width: 563px) {
+    header {
+        display: flex;
+        flex-direction: column;
+
+        nav {
+            float: none;
+        }
+    }
+}
+
 // Page Produit
 .MonOurson {
     width: 80%;
@@ -121,7 +153,7 @@ h1 {
     flex-direction: row;
     border-style: double;
     border-radius: 70px;
-    border-color: #945ef0;
+    border-color: #ab659d;
 
     img {
         width: 70%;
@@ -176,8 +208,12 @@ h1 {
 
     tr {
         td {
-            border: 1px solid black;
+            border: double #ab659d;
             padding: 20px !important;
+        }
+        button {
+            @include bouton;
+            margin: 5px;
         }
     }
 }
@@ -220,15 +256,16 @@ form {
     }
 
     .button {
-        padding-left: 90px;
+        margin-top: 15px;
+        text-align: center;
     }
 
     button {
-        margin-left: 0.5em;
+        @include bouton;
     }
 }
 
-form div+div {
+form div + div {
     margin-top: 1em;
 }
 
@@ -248,7 +285,8 @@ h3 {
         list-style-type: none;
         margin-left: auto;
         margin-right: auto;
-        border: 1px solid black;
+        border: double  #ab659d;
+        border-radius: 15px;
     }
 }
 

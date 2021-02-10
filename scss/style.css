@@ -7,10 +7,12 @@
 
 body {
   background-color: #f3e9f1 !important;
+  font-family: "Belligerent-Madness" !important;
 }
 
 header {
   text-align: center;
+  padding-top: 20px;
 }
 
 header div {
@@ -35,9 +37,33 @@ header nav {
   margin: 10px 10px 0 0;
 }
 
-h1 {
-  font-family: "Belligerent-Madness" !important;
-  font-size: 50px;
+header p {
+  font-size: 30px;
+  padding: 15px;
+  margin-bottom: 10px;
+  margin: 10px 64px;
+  margin-bottom: 10px;
+  border-style: double;
+  border-radius: 70px;
+  border-color: #ab659d;
+  margin-top: 1rem;
+}
+
+footer {
+  border-top: double #ab659d;
+  margin: 20px 0 20px 0;
+  text-align: center;
+}
+
+footer ul {
+  margin: 20px;
+  padding: 20px;
+  list-style: none;
+}
+
+footer i {
+  color: cornflowerblue;
+  padding-bottom: 20px;
 }
 
 #listeOursons {
@@ -78,9 +104,6 @@ h1 {
 }
 
 #listeOursons .conteneur a {
-  /* 
-    border-style: double !important;
-    border-color: #8e869c !important; */
   text-decoration: none !important;
   background: #e68a08 !important;
   background-size: 100% !important;
@@ -118,6 +141,21 @@ h1 {
   }
 }
 
+@media only screen and (max-width: 563px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header nav {
+    float: none;
+  }
+}
+
 .MonOurson {
   width: 80%;
   margin-left: auto;
@@ -132,7 +170,7 @@ h1 {
           flex-direction: row;
   border-style: double;
   border-radius: 70px;
-  border-color: #945ef0;
+  border-color: #ab659d;
 }
 
 .MonOurson img {
@@ -171,9 +209,6 @@ h1 {
 }
 
 .MonOurson a {
-  /* 
-    border-style: double !important;
-    border-color: #8e869c !important; */
   text-decoration: none !important;
   background: #e68a08 !important;
   background-size: 100% !important;
@@ -222,8 +257,36 @@ h1 {
 
 #listePanier tr td,
 #count tr td {
-  border: 1px solid black;
+  border: double #ab659d;
   padding: 20px !important;
+}
+
+#listePanier tr button,
+#count tr button {
+  text-decoration: none !important;
+  background: #e68a08 !important;
+  background-size: 100% !important;
+  background-image: -webkit-gradient(linear, left top, right top, from(#e68a08), to(#935df3)) !important;
+  background-image: linear-gradient(to right, #e68a08, #935df3) !important;
+  border-radius: 1.5em !important;
+  -webkit-transition-duration: 0.5s !important;
+          transition-duration: 0.5s !important;
+  padding: 15px !important;
+  font-weight: bold !important;
+  letter-spacing: 0.05em !important;
+  margin: 5px;
+}
+
+#listePanier tr button:hover,
+#count tr button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  border-style: none;
+}
+
+#listePanier tr button:hover:before,
+#count tr button:hover:before {
+  opacity: 1;
 }
 
 form {
@@ -264,11 +327,32 @@ form textarea {
 }
 
 form .button {
-  padding-left: 90px;
+  margin-top: 15px;
+  text-align: center;
 }
 
 form button {
-  margin-left: 0.5em;
+  text-decoration: none !important;
+  background: #e68a08 !important;
+  background-size: 100% !important;
+  background-image: -webkit-gradient(linear, left top, right top, from(#e68a08), to(#935df3)) !important;
+  background-image: linear-gradient(to right, #e68a08, #935df3) !important;
+  border-radius: 1.5em !important;
+  -webkit-transition-duration: 0.5s !important;
+          transition-duration: 0.5s !important;
+  padding: 15px !important;
+  font-weight: bold !important;
+  letter-spacing: 0.05em !important;
+}
+
+form button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  border-style: none;
+}
+
+form button:hover:before {
+  opacity: 1;
 }
 
 form div + div {
@@ -296,7 +380,8 @@ h3 {
   list-style-type: none;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+  border: double  #ab659d;
+  border-radius: 15px;
 }
 
 @media only screen and (max-width: 900px) {
