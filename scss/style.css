@@ -104,23 +104,23 @@ footer i {
 }
 
 #listeOursons .conteneur a {
-  text-decoration: none !important;
-  background: #e68a08 !important;
-  background-size: 100% !important;
-  background-image: -webkit-gradient(linear, left top, right top, from(#e68a08), to(#935df3)) !important;
-  background-image: linear-gradient(to right, #e68a08, #935df3) !important;
-  border-radius: 1.5em !important;
-  -webkit-transition-duration: 0.5s !important;
-          transition-duration: 0.5s !important;
-  padding: 15px !important;
-  font-weight: bold !important;
-  letter-spacing: 0.05em !important;
+  text-decoration: none;
+  background: #e68a08;
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#e68a08), to(#935df3));
+  background-image: linear-gradient(to right, #e68a08, #935df3);
+  border-radius: 1.5em;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  padding: 15px;
+  border-style: none;
+  font-weight: bold;
+  letter-spacing: 0.05em;
 }
 
 #listeOursons .conteneur a:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  border-style: none;
 }
 
 #listeOursons .conteneur a:hover:before {
@@ -195,9 +195,6 @@ footer i {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  /* a {
-                @include bouton;
-        } */
 }
 
 .MonOurson p {
@@ -209,24 +206,24 @@ footer i {
 }
 
 .MonOurson a {
-  text-decoration: none !important;
-  background: #e68a08 !important;
-  background-size: 100% !important;
-  background-image: -webkit-gradient(linear, left top, right top, from(#e68a08), to(#935df3)) !important;
-  background-image: linear-gradient(to right, #e68a08, #935df3) !important;
-  border-radius: 1.5em !important;
-  -webkit-transition-duration: 0.5s !important;
-          transition-duration: 0.5s !important;
-  padding: 15px !important;
-  font-weight: bold !important;
-  letter-spacing: 0.05em !important;
+  text-decoration: none;
+  background: #e68a08;
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#e68a08), to(#935df3));
+  background-image: linear-gradient(to right, #e68a08, #935df3);
+  border-radius: 1.5em;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  padding: 15px;
+  border-style: none;
+  font-weight: bold;
+  letter-spacing: 0.05em;
   margin: 0px 20px 20px 0px;
 }
 
 .MonOurson a:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  border-style: none;
 }
 
 .MonOurson a:hover:before {
@@ -263,17 +260,18 @@ footer i {
 
 #listePanier tr button,
 #count tr button {
-  text-decoration: none !important;
-  background: #e68a08 !important;
-  background-size: 100% !important;
-  background-image: -webkit-gradient(linear, left top, right top, from(#e68a08), to(#935df3)) !important;
-  background-image: linear-gradient(to right, #e68a08, #935df3) !important;
-  border-radius: 1.5em !important;
-  -webkit-transition-duration: 0.5s !important;
-          transition-duration: 0.5s !important;
-  padding: 15px !important;
-  font-weight: bold !important;
-  letter-spacing: 0.05em !important;
+  text-decoration: none;
+  background: #e68a08;
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#e68a08), to(#935df3));
+  background-image: linear-gradient(to right, #e68a08, #935df3);
+  border-radius: 1.5em;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  padding: 15px;
+  border-style: none;
+  font-weight: bold;
+  letter-spacing: 0.05em;
   margin: 5px;
 }
 
@@ -281,7 +279,6 @@ footer i {
 #count tr button:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  border-style: none;
 }
 
 #listePanier tr button:hover:before,
@@ -332,23 +329,23 @@ form .button {
 }
 
 form button {
-  text-decoration: none !important;
-  background: #e68a08 !important;
-  background-size: 100% !important;
-  background-image: -webkit-gradient(linear, left top, right top, from(#e68a08), to(#935df3)) !important;
-  background-image: linear-gradient(to right, #e68a08, #935df3) !important;
-  border-radius: 1.5em !important;
-  -webkit-transition-duration: 0.5s !important;
-          transition-duration: 0.5s !important;
-  padding: 15px !important;
-  font-weight: bold !important;
-  letter-spacing: 0.05em !important;
+  text-decoration: none;
+  background: #e68a08;
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#e68a08), to(#935df3));
+  background-image: linear-gradient(to right, #e68a08, #935df3);
+  border-radius: 1.5em;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  padding: 15px;
+  border-style: none;
+  font-weight: bold;
+  letter-spacing: 0.05em;
 }
 
 form button:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  border-style: none;
 }
 
 form button:hover:before {

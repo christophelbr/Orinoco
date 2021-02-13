@@ -1,7 +1,7 @@
 let order = JSON.parse(localStorage.getItem('order'));
 let bill = JSON.parse(localStorage.getItem('totalPrice'));
 console.log(order);
-document.getElementById('thanks').textContent = order.contact.thanks;
+document.getElementById('thanks').textContent = `${order.contact.firstName} toute l'équipe d'Orinococo vous remercie pour votre commande!`;
 document.getElementById('cmd').textContent = order.orderId;
 document.getElementById('adress').textContent = order.contact.adress;
 document.getElementById('city').textContent = order.contact.city;

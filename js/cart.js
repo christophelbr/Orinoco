@@ -50,13 +50,10 @@ class ShoppingCart {
         const itemFound = this.cart.find(e => e.productId === ourson._id);
         if (itemFound) {
             itemFound.quantity++;
-            console.log('il y est déjà');
         } else {
             this.cart.push(itemCart);
-            console.log('il n \'y est pas');
         };
         this.saveCart();
-        console.log("Le produit a été ajouté au panier");
         this.countCart();
     }
 
@@ -96,7 +93,6 @@ class ShoppingCart {
             this.lessPlusButton(more, item, tdQuantity, tdPrice);
             this.lessPlusButton(less, item, tdQuantity, tdPrice);
         }
-
     }
 
     // Création td dans panier
@@ -115,8 +111,6 @@ class ShoppingCart {
                 item.quantity--;
                 if (item.quantity <= 0) {
                     item.quantity = 0;
-                    this.cart.splice(item);
-
                 }
             }
             this.saveCart();
@@ -128,6 +122,7 @@ class ShoppingCart {
 
     //Validation formulaire
     formValid() {
+        let isValid = true;
         let firstName = document.getElementById('firstname');
         let lastName = document.getElementById('lastname');
         let adress = document.getElementById('adress');
@@ -137,40 +132,38 @@ class ShoppingCart {
         if (firstName.value == "") {
             alert("Mettez votre nom.");
             firstName.focus();
-            return false;
+            isValid = false;
         }
         if (lastName.value == "") {
             alert("Mettez votre prénom.");
             lastName.focus();
-            return false;
+            isValid = false;
+
         }
         if (adress.value == "") {
             alert("Mettez une adresse email valide.");
             adress.focus();
-            return false;
+            isValid = false;
+
         }
         if (city.value == "") {
             alert("saisissez votre ville.");
             city.focus();
-            return false;
+            isValid = false;
         }
         if (mail.value.indexOf("@", 0) < 0) {
             alert("Mettez une adresse email valide.");
             email.focus();
-            return false;
+            isValid = false;
         }
         if (mail.value.indexOf(".", 0) < 0) {
             alert("Mettez une adresse email valide.");
             mail.focus();
-            return false;
-        } /* else {
-            document.location.href = "order.html"
-
-        } */
+            isValid = false;
+        } 
+        return isValid;
 
     }
-
-
 
     // Envoi formulaire
     submitCart() {
@@ -179,7 +172,7 @@ class ShoppingCart {
             document.querySelector('form button').addEventListener('click', (event) => {
                 event.preventDefault();
                 console.log('envoi form');
-                this.formValid();
+                const isValid = this.formValid();
                 const products = [];
                 for (let ourson of this.cart) {
                     for (let i = 0; i < ourson.quantity; i++) {
@@ -196,13 +189,13 @@ class ShoppingCart {
                         "adress": document.getElementById('adress').value,
                         "city": document.getElementById('city').value,
                         "email": document.getElementById('mail').value,
-                        "thanks": document.getElementById('lastname').value + ', toute l\'équipe d\'Orinococo vous remercie pour votre commande!',
                     },
                     products
                 };
 
                 console.log(form);
-                (async () => {
+                if (isValid) {
+                (async () => { 
                     const envoiForm = fetch("http://localhost:3000/api/teddies/order", {
                         method: "POST",
                         headers: {
@@ -219,7 +212,7 @@ class ShoppingCart {
                         console.log(this.cart);
                         document.location.href = "order.html"
                     });
-                })();
+                })();}
             })
         }
     }

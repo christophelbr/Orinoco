@@ -6,19 +6,19 @@
 }
 
 @mixin bouton {
-    text-decoration: none !important;
-    background: #e68a08 !important;
-    background-size: 100% !important;
-    background-image: linear-gradient(to right, #e68a08, #935df3) !important;
-    border-radius: 1.5em !important;
-    transition-duration: 0.5s !important;
-    padding: 15px !important;
-    font-weight: bold !important;
-    letter-spacing: 0.05em !important;
+    text-decoration: none ;
+    background: #e68a08 ;
+    background-size: 100% ;
+    background-image: linear-gradient(to right, #e68a08, #935df3) ;
+    border-radius: 1.5em ;
+    transition-duration: 0.5s ;
+    padding: 15px ;
+    border-style: none;
+    font-weight: bold ;
+    letter-spacing: 0.05em ;
 
     &:hover {
         transform: scale(1.1);
-        border-style: none;
     }
 
     &:hover:before {
@@ -172,9 +172,6 @@ footer {
     .infosProduit {
         display: flex;
         flex-direction: column;
-        /* a {
-                @include bouton;
-        } */
     }
 
     p {
@@ -251,7 +248,6 @@ form {
 
     textarea {
         vertical-align: top;
-
         height: 5em;
     }
 

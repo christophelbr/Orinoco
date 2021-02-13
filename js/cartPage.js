@@ -1,10 +1,9 @@
 class CartPage {
-    constructor() {
-      this.cart = new ShoppingCart;
-      this.cart.displayCart();
-    }
+  constructor() {
+    this.cart = new ShoppingCart;
+    this.cart.displayCart();
+  }
 }
 const cartPage = new CartPage;
 
-  
-  
+
