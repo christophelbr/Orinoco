@@ -3,6 +3,7 @@
 var order = JSON.parse(localStorage.getItem('order'));
 var bill = JSON.parse(localStorage.getItem('totalPrice'));
 console.log(order);
+document.getElementById('thanks').textContent = "".concat(order.contact.lastName, " toute l'\xE9quipe d'Orinococo vous remercie pour votre commande!");
 document.getElementById('cmd').textContent = order.orderId;
 document.getElementById('adress').textContent = order.contact.adress;
 document.getElementById('city').textContent = order.contact.city;
@@ -17,10 +18,16 @@ var _iteratorError = undefined;
 try {
   for (var _iterator = order.products[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
     var product = _step.value;
-    var liproduct = document.createElement('li');
-    var productList = document.getElementById('product-list');
-    productList.appendChild(liproduct);
-    liproduct.textContent = product.name + " " + product.price + " €";
+    // let liproduct = document.createElement('ul');
+    var productNamePrice = document.createElement('tr');
+    var productName = document.createElement('td');
+    var productPrice = document.createElement('td');
+    var listePanier = document.getElementById('listePanier');
+    listePanier.appendChild(productNamePrice);
+    productNamePrice.appendChild(productName);
+    productNamePrice.appendChild(productPrice);
+    productName.textContent = product.name;
+    productPrice.textContent = product.price + " €"; // liproduct.textContent = product.name + " " + product.price + " €";
   }
 } catch (err) {
   _didIteratorError = true;
@@ -36,3 +43,5 @@ try {
     }
   }
 }
+
+localStorage.clear();

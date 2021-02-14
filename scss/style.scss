@@ -6,16 +6,16 @@
 }
 
 @mixin bouton {
-    text-decoration: none ;
-    background: #e68a08 ;
-    background-size: 100% ;
-    background-image: linear-gradient(to right, #e68a08, #935df3) ;
-    border-radius: 1.5em ;
-    transition-duration: 0.5s ;
-    padding: 15px ;
+    text-decoration: none;
+    background: #e68a08;
+    background-size: 100%;
+    background-image: linear-gradient(to right, #e68a08, #935df3);
+    border-radius: 1.5em;
+    transition-duration: 0.5s;
+    padding: 15px;
     border-style: none;
-    font-weight: bold ;
-    letter-spacing: 0.05em ;
+    font-weight: bold;
+    letter-spacing: 0.05em;
 
     &:hover {
         transform: scale(1.1);
@@ -54,6 +54,7 @@ header {
         float: right;
         margin: 10px 10px 0 0;
     }
+
     p {
         font-size: 30px;
         padding: 15px;
@@ -71,11 +72,13 @@ footer {
     border-top: double #ab659d;
     margin: 20px 0 20px 0;
     text-align: center;
+
     ul {
         margin: 20px;
         padding: 20px;
         list-style: none;
     }
+
     i {
         color: cornflowerblue;
         padding-bottom: 20px;
@@ -208,6 +211,7 @@ footer {
             border: double #ab659d;
             padding: 20px !important;
         }
+
         button {
             @include bouton;
             margin: 5px;
@@ -261,7 +265,7 @@ form {
     }
 }
 
-form div + div {
+form div+div {
     margin-top: 1em;
 }
 
@@ -281,9 +285,16 @@ h3 {
         list-style-type: none;
         margin-left: auto;
         margin-right: auto;
-        border: double  #ab659d;
+        border: double #ab659d;
         border-radius: 15px;
+
+        li {}
     }
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media only screen and (max-width: 900px) {

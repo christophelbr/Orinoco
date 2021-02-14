@@ -6,10 +6,12 @@
 }
 body {
   background-color: #f3e9f1 !important;
+  font-family: "Belligerent-Madness" !important;
 }
 
 header {
   text-align: center;
+  padding-top: 20px;
 }
 header div {
   display: inline-flex;
@@ -27,10 +29,31 @@ header nav {
   float: right;
   margin: 10px 10px 0 0;
 }
+header p {
+  font-size: 30px;
+  padding: 15px;
+  margin-bottom: 10px;
+  margin: 10px 64px;
+  margin-bottom: 10px;
+  border-style: double;
+  border-radius: 70px;
+  border-color: #ab659d;
+  margin-top: 1rem;
+}
 
-h1 {
-  font-family: "Belligerent-Madness" !important;
-  font-size: 50px;
+footer {
+  border-top: double #ab659d;
+  margin: 20px 0 20px 0;
+  text-align: center;
+}
+footer ul {
+  margin: 20px;
+  padding: 20px;
+  list-style: none;
+}
+footer i {
+  color: cornflowerblue;
+  padding-bottom: 20px;
 }
 
 #listeOursons {
@@ -62,22 +85,19 @@ h1 {
   transform: rotateZ(360deg);
 }
 #listeOursons .conteneur a {
-  /* 
-  border-style: double !important;
-  border-color: #8e869c !important; */
-  text-decoration: none !important;
-  background: #e68a08 !important;
-  background-size: 100% !important;
-  background-image: linear-gradient(to right, #e68a08, #935df3) !important;
-  border-radius: 1.5em !important;
-  transition-duration: 0.5s !important;
-  padding: 15px !important;
-  font-weight: bold !important;
-  letter-spacing: 0.05em !important;
+  text-decoration: none;
+  background: #e68a08;
+  background-size: 100%;
+  background-image: linear-gradient(to right, #e68a08, #935df3);
+  border-radius: 1.5em;
+  transition-duration: 0.5s;
+  padding: 15px;
+  border-style: none;
+  font-weight: bold;
+  letter-spacing: 0.05em;
 }
 #listeOursons .conteneur a:hover {
   transform: scale(1.1);
-  border-style: none;
 }
 #listeOursons .conteneur a:hover:before {
   opacity: 1;
@@ -93,6 +113,15 @@ h1 {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+@media only screen and (max-width: 563px) {
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+  header nav {
+    float: none;
+  }
+}
 .MonOurson {
   width: 80%;
   margin-left: auto;
@@ -102,7 +131,7 @@ h1 {
   flex-direction: row;
   border-style: double;
   border-radius: 70px;
-  border-color: #945ef0;
+  border-color: #ab659d;
 }
 .MonOurson img {
   width: 70%;
@@ -118,9 +147,6 @@ h1 {
 .MonOurson .infosProduit {
   display: flex;
   flex-direction: column;
-  /* a {
-          @include bouton;
-  } */
 }
 .MonOurson p {
   margin-bottom: 20px;
@@ -129,23 +155,20 @@ h1 {
   margin: 0px 20px 20px 20px;
 }
 .MonOurson a {
-  /* 
-  border-style: double !important;
-  border-color: #8e869c !important; */
-  text-decoration: none !important;
-  background: #e68a08 !important;
-  background-size: 100% !important;
-  background-image: linear-gradient(to right, #e68a08, #935df3) !important;
-  border-radius: 1.5em !important;
-  transition-duration: 0.5s !important;
-  padding: 15px !important;
-  font-weight: bold !important;
-  letter-spacing: 0.05em !important;
+  text-decoration: none;
+  background: #e68a08;
+  background-size: 100%;
+  background-image: linear-gradient(to right, #e68a08, #935df3);
+  border-radius: 1.5em;
+  transition-duration: 0.5s;
+  padding: 15px;
+  border-style: none;
+  font-weight: bold;
+  letter-spacing: 0.05em;
   margin: 0px 20px 20px 0px;
 }
 .MonOurson a:hover {
   transform: scale(1.1);
-  border-style: none;
 }
 .MonOurson a:hover:before {
   opacity: 1;
@@ -166,8 +189,30 @@ h1 {
 }
 #listePanier tr td,
 #count tr td {
-  border: 1px solid black;
+  border: double #ab659d;
   padding: 20px !important;
+}
+#listePanier tr button,
+#count tr button {
+  text-decoration: none;
+  background: #e68a08;
+  background-size: 100%;
+  background-image: linear-gradient(to right, #e68a08, #935df3);
+  border-radius: 1.5em;
+  transition-duration: 0.5s;
+  padding: 15px;
+  border-style: none;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  margin: 5px;
+}
+#listePanier tr button:hover,
+#count tr button:hover {
+  transform: scale(1.1);
+}
+#listePanier tr button:hover:before,
+#count tr button:hover:before {
+  opacity: 1;
 }
 
 form {
@@ -201,10 +246,26 @@ form textarea {
   height: 5em;
 }
 form .button {
-  padding-left: 90px;
+  margin-top: 15px;
+  text-align: center;
 }
 form button {
-  margin-left: 0.5em;
+  text-decoration: none;
+  background: #e68a08;
+  background-size: 100%;
+  background-image: linear-gradient(to right, #e68a08, #935df3);
+  border-radius: 1.5em;
+  transition-duration: 0.5s;
+  padding: 15px;
+  border-style: none;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+form button:hover {
+  transform: scale(1.1);
+}
+form button:hover:before {
+  opacity: 1;
 }
 
 form div + div {
@@ -226,7 +287,12 @@ h3 {
   list-style-type: none;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+  border: double #ab659d;
+  border-radius: 15px;
+}
+table {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media only screen and (max-width: 900px) {
