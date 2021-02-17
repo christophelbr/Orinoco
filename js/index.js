@@ -1,5 +1,5 @@
 const section = document.querySelector('section');
-fetch("http://orinoco-oc.herokuapp.com/api/teddies")
+fetch("https://orinoco-oc.herokuapp.com/api/teddies")
     .then(response => response.json())
     .then(response => {
         response.forEach(function (oursons) {

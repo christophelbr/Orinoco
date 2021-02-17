@@ -196,7 +196,7 @@ class ShoppingCart {
                 console.log(form);
                 if (isValid) {
                 (async () => { 
-                    const envoiForm = fetch("http://orinoco-oc.herokuapp.com/api/teddies/order", {
+                    const envoiForm = fetch("https://orinoco-oc.herokuapp.com/api/teddies/order", {
                         method: "POST",
                         headers: {
                             'Accept': 'application/JSON',
