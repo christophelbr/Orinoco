@@ -1,6 +1,5 @@
 let order = JSON.parse(localStorage.getItem('order'));
 let bill = JSON.parse(localStorage.getItem('totalPrice'));
-console.log(order);
 document.getElementById('thanks').textContent = `${order.contact.lastName} toute l'équipe d'Orinococo vous remercie pour votre commande!`;
 document.getElementById('cmd').textContent = order.orderId;
 document.getElementById('adress').textContent = order.contact.adress;
@@ -10,7 +9,6 @@ document.getElementById('mail').textContent = order.contact.email;
 document.getElementById('nb-articles').textContent = order.products.length + ' ';
 document.getElementById('totalPrice').textContent = bill + ' €';
 for (let product of order.products) {
-   // let liproduct = document.createElement('ul');
     let productNamePrice = document.createElement('tr');
     let productName = document.createElement('td');
     let productPrice = document.createElement('td');
@@ -20,7 +18,5 @@ for (let product of order.products) {
     productNamePrice.appendChild(productPrice);
     productName.textContent = product.name;
     productPrice.textContent = product.price + " €";
-
-   // liproduct.textContent = product.name + " " + product.price + " €";
 }
 localStorage.clear();
