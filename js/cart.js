@@ -125,7 +125,7 @@ class ShoppingCart {
         let isValid = true;
         let firstName = document.getElementById('firstname');
         let lastName = document.getElementById('lastname');
-        let adress = document.getElementById('adress');
+        let address = document.getElementById('address');
         let city = document.getElementById('city');
         let mail = document.getElementById('mail');
 
@@ -140,9 +140,9 @@ class ShoppingCart {
             isValid = false;
 
         }
-        if (adress.value == "") {
+        if (address.value == "") {
             alert("Mettez une adresse email valide.");
-            adress.focus();
+            address.focus();
             isValid = false;
 
         }
@@ -186,7 +186,7 @@ class ShoppingCart {
                     "contact": {
                         "firstName": document.getElementById('firstname').value,
                         "lastName": document.getElementById('lastname').value,
-                        "adress": document.getElementById('adress').value,
+                        "address": document.getElementById('address').value,
                         "city": document.getElementById('city').value,
                         "email": document.getElementById('mail').value,
                     },
