@@ -7,7 +7,7 @@ document.getElementById('city').textContent = order.contact.city;
 document.getElementById('name').textContent = order.contact.firstName + ' ' + order.contact.lastName;
 document.getElementById('mail').textContent = order.contact.email;
 document.getElementById('nb-articles').textContent = order.products.length + ' ';
-document.getElementById('totalPrice').textContent = bill + ' €';
+document.getElementById('totalPrice').textContent = bill/100 + ' €';
 for (let product of order.products) {
     let productNamePrice = document.createElement('tr');
     let productName = document.createElement('td');
@@ -17,6 +17,6 @@ for (let product of order.products) {
     productNamePrice.appendChild(productName);
     productNamePrice.appendChild(productPrice);
     productName.textContent = product.name;
-    productPrice.textContent = product.price + " €";
+    productPrice.textContent = product.price/100 + " €";
 }
 localStorage.clear();

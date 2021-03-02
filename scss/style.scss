@@ -234,6 +234,13 @@ form {
 
     li {
         list-style: none;
+        .invalid {
+            border: 2px solid red ;
+        }
+    }
+
+    small {
+        color: red;
     }
 
     input,
@@ -249,6 +256,7 @@ form {
     textarea:focus {
         border-color: #000;
     }
+
 
     textarea {
         vertical-align: top;

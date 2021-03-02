@@ -304,6 +304,14 @@ form li {
   list-style: none;
 }
 
+form li .invalid {
+  border: 2px solid red;
+}
+
+form small {
+  color: red;
+}
+
 form input,
 form textarea {
   font: 1em sans-serif;

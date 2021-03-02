@@ -29,7 +29,7 @@ class ShoppingCart {
         }
         document.getElementById('total-count').innerHTML = count;
         if (document.URL.indexOf("panier.html") >= 0) {
-            document.getElementById('totalPrice').innerHTML = totalPrice + " €";
+            document.getElementById('totalPrice').innerHTML = totalPrice/100 + " €";
         }
         localStorage.setItem('totalPrice', JSON.stringify(totalPrice));
     }
@@ -81,7 +81,7 @@ class ShoppingCart {
             const tdName = this.createTdInCartTable(item.name);
             tr.appendChild(tdName);
             tr.appendChild(tdPrice);
-            tdPrice.textContent = item.price * item.quantity + " €";
+            tdPrice.textContent = item.price/100 * item.quantity + " €";
             // Creation quantité
             const tdQuantity = this.createTdInCartTable(item.quantity);
             tr.appendChild(tdQuantity);
@@ -116,72 +116,105 @@ class ShoppingCart {
             this.saveCart();
             this.countCart();
             tdQuantity.textContent = item.quantity;
-            tdPrice.textContent = item.price * item.quantity;
+            tdPrice.textContent = item.price/100 * item.quantity + ' €';
         })
     }
 
-    //Validation formulaire
+    //Validation formulaire + commande
     formValid() {
         let isValid = true;
         let firstName = document.getElementById('firstname');
+        let errorFirstName = document.getElementById('error-firstname');
         let lastName = document.getElementById('lastname');
+        let errorLastName = document.getElementById('error-lastname');
         let address = document.getElementById('address');
+        let errorAddress = document.getElementById('error-address');
         let city = document.getElementById('city');
+        let errorCity = document.getElementById('error-city');
         let mail = document.getElementById('mail');
+        let errorMail = document.getElementById('error-mail');
+        const cartPrice = localStorage.getItem('totalPrice');
 
+        if (cartPrice == 0) {
+            alert("Votre panier est vide !");
+            isValid = false;
+        }
         if (firstName.value == "") {
-            alert("Mettez votre nom.");
-            firstName.focus();
+            firstName.classList.add('invalid');
+            errorFirstName.textContent = 'Veuillez renseigner votre nom'
             isValid = false;
+        } else { 
+            firstName.classList.remove('invalid');
+            errorFirstName.textContent = '';
         }
+
         if (lastName.value == "") {
-            alert("Mettez votre prénom.");
-            lastName.focus();
+            lastName.classList.add('invalid');
+            errorLastName.textContent = 'Veuillez renseigner votre prénom'
             isValid = false;
-
         }
+        else { 
+            lastName.classList.remove('invalid');
+            errorLastName.textContent = '';
+        }
+
         if (address.value == "") {
-            alert("Mettez une adresse email valide.");
-            address.focus();
+            address.classList.add('invalid');
+            errorAddress.textContent = 'Veuillez renseigner votre adresse'
             isValid = false;
-
         }
+        else { 
+            address.classList.remove('invalid');
+            errorAddress.textContent = '';
+        }
+        
         if (city.value == "") {
-            alert("saisissez votre ville.");
-            city.focus();
+            city.classList.add('invalid');
+            errorCity.textContent = 'Veuillez renseigner votre ville'
             isValid = false;
         }
+        else { 
+            city.classList.remove('invalid');
+            errorCity.textContent = '';
+        }
+
         if (mail.value.indexOf("@", 0) < 0) {
-            alert("Mettez une adresse email valide.");
-            email.focus();
+            mail.classList.add('invalid');
+            errorMail.textContent = 'Veuillez renseigner une adresse mail correcte'
             isValid = false;
         }
+        else { 
+            mail.classList.remove('invalid');
+            errorMail.textContent = '';
+        }
+
         if (mail.value.indexOf(".", 0) < 0) {
-            alert("Mettez une adresse email valide.");
-            mail.focus();
+            mail.classList.add('invalid');
+            errorMail.textContent = 'Veuillez renseigner une adresse mail correcte'
             isValid = false;
         } 
+        else { 
+            mail.classList.remove('invalid');
+            errorMail.textContent = '';
+        }
+
         return isValid;
 
     }
 
+
     // Envoi formulaire
     submitCart() {
         if (document.URL.indexOf("panier.html") >= 0) {
-
             document.querySelector('form button').addEventListener('click', (event) => {
                 event.preventDefault();
-                console.log('envoi form');
-                const isValid = this.formValid();
+                const isValid = this.formValid(); 
                 const products = [];
                 for (let ourson of this.cart) {
                     for (let i = 0; i < ourson.quantity; i++) {
                         products.push(ourson.productId)
                     }
                 }
-
-                console.log(products);
-
                 const form = {
                     "contact": {
                         "firstName": document.getElementById('firstname').value,
@@ -193,7 +226,6 @@ class ShoppingCart {
                     products
                 };
 
-                console.log(form);
                 if (isValid) {
                 (async () => { 
                     const envoiForm = fetch("https://orinoco-oc.herokuapp.com/api/teddies/order", {
@@ -206,10 +238,8 @@ class ShoppingCart {
                     }).then((response) => {
                         return response.json();
                     }).then((data) => {
-                        console.log(data);
-                        this.clearCart();
+                        //this.clearCart();
                         localStorage.setItem('order', JSON.stringify(data));
-                        console.log(this.cart);
                         document.location.href = "order.html"
                     });
                 })();}
